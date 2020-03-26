@@ -1,7 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   const swup = new Swup({
-    plugins: [new SwupPreloadPlugin()]
+    plugins: [
+      new SwupPreloadPlugin(), 
+      new SwupOverlayTheme({
+        color: 'red',
+      })
+    ]
   });
 
   function init() {
@@ -33,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
       var indexList = new List('index', options);
       indexList.sort('year', { order: 'desc' }); 
-      //document.body.style.backgroundColor = 'red';
+      document.body.style.backgroundColor = 'black';
       document.querySelectorAll('.tag').forEach(item => {
         item.addEventListener('click', (e) => {
           indexList.search(e.target.getAttribute('data-name'));

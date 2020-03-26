@@ -190,8 +190,8 @@ html.is-animating .transition-left {
 
 .splitting .word {
   white-space: nowrap;
-  padding: 2rem 0;
-  margin: -2.25rem -.25rem;
+  padding: 20px 0;
+  margin: -22.5px -.5px;
 }
 
 .splitting .word {
@@ -238,24 +238,24 @@ main.reveal .splitting.on .word:after {
 }
 
 .has-text-small {
-  font-size: calc(0.5rem + 1vw);
+  font-size: calc(1rem + .5vw);
   letter-spacing: -0.01rem;
 }
 
 .has-text-normal {
-  font-size: calc(1rem + 1vw);
+  font-size: calc(1.25rem + .5vw);
   letter-spacing: -0.01rem;
 }
 
 .has-text-big {
-  font-size: calc(1.5rem + 1vw);
+  font-size: calc(1.75rem + .5vw);
 }
 
 .has-text-biggest {
-  font-size: calc(2rem + 1vw);
+  font-size: calc(2.5rem + .5vw);
   margin: 0;
-  letter-spacing: -0.05rem;
   font-family: "SportingGrotsque", sans-serif;
+  line-height: 1.05;
 }
 
 .has-bg-gradient {
@@ -353,7 +353,7 @@ main.index > header {
 
 #index > .index.gallery > ol > li {
   background-color: rebeccapurple;
-  border-radius: 50px;
+  border-radius: 100px 100px 50px 50px;
 }
 
 #index > .index.gallery > ol > li > img {
@@ -507,7 +507,7 @@ main.about > footer {
   text-align: center; 
   animation: write 2s ease-in;
   animation-fill-mode: forwards;
-  font-size: calc(3.5rem + 7vw);
+  font-size: calc(3rem + 5vw);
   padding-bottom: 5px;
 }
 
@@ -593,20 +593,10 @@ main.reveal > footer {
   background-color: black;
   color: white;
   display: grid;
-  text-align: left;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-areas: 
-    "title title"
-    "tags dida";
 }
 
 .project-dida-container > .title {
   grid-area: title;
-}
-
-.project-dida-container > .tags {
-  grid-area: tags;
 }
 
 .project-dida-container > .dida {
@@ -651,18 +641,12 @@ main.reveal > footer {
     overflow: scroll;
     grid-template-areas:
       "title"
-      "tags"
       "dida";
   }
   .project-dida-container > .title {
     /*background-color: red;
     color: black;*/
-    padding: 10px 25% 10px 10px;
-  }
-  .project-dida-container > .tags {
-    /*background-color: #f07300;
-    color: black;*/
-    padding: 10px;
+    padding: 10px 25% 10px 25%;
   }
   .project-dida-container > .dida {
     padding: 10px;
@@ -683,12 +667,12 @@ main.reveal > footer {
 }
 
 @media screen and (max-width: 976px) and (orientation: portrait) {
-  .has-text-small {
+  /*.has-text-small {
     font-size: calc(1rem + 8vw);
   }
   .has-text-normal {
     font-size: calc(1rem + 8vw);
-  }
+  }*/
   #logo {
     padding: 0 10vw 20vw 10vw;
   }
@@ -715,30 +699,19 @@ main.reveal > footer {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas: 
-      "title dida"
-      "tags dida";
+      "title title"
+      "dida dida";
   }
   
   .project-dida-container > .title {
     /*background-color: red;
     color: black;*/
-    padding: 10px 25% 10px 10px;
+    padding: 10px 25% 10px 25%;
     overflow: scroll;
-  }
-  
-  .project-dida-container > .tags {
-    /*background-color: #f07300;
-    color: black;*/
-    padding: 10px;
-    overflow: scroll;
-  }
-
-  .project-dida-container > .tags > p {
-    white-space: break-spaces;
   }
 
   .project-dida-container > .dida {
-    padding: 10px;
+    padding: 10px 25% 10px 25%;
     overflow: scroll;
   }
 }
