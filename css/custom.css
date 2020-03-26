@@ -83,7 +83,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 a {
@@ -232,6 +232,10 @@ main.reveal .splitting.on .word:after {
 }
 
 /*__Helpers__*/
+
+.keep {
+  white-space: nowrap;
+}
 
 .has-text-responsive {
   font-size: calc(100vw / var(--char-total));
@@ -482,7 +486,7 @@ main.about.wrapper {
 }
 
 main.about > header {
-  padding:0 var(--spacing) 10vh var(--spacing);
+  padding: 10vh var(--spacing) 10vh var(--spacing);
 }
 
 main.about > footer {
@@ -496,10 +500,25 @@ main.about > footer {
 }
 
 #portrait {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
-  height: 50vh;
-  min-height: 50vh;
+  height: 40vh;
+  max-width: 60vw;
+  transform-style: preserve-3d;
+  animation: rotate3d 60s linear 0s infinite alternate-reverse;
+  position: fixed;
+  z-index: 10;
+}
+
+@keyframes rotate3d {
+  from {
+      transform: rotateX(-360deg) rotateY(-360deg) rotateZ(-360deg);
+      transform-origin: 50% 50%;
+  }
+  to {
+      transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+      transform-origin: 50% 50%;
+  }
 }
 
 .duos {

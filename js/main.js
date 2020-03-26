@@ -109,7 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
             //document.querySelector('.slides').classList.add('on-top');
             document.getElementById('nav-zone').style.zIndex = '+150';
           } else if (progress === 1) {
-            document.getElementById('next').href = '/index.html';
+            var goTo = document.getElementById('slideshow-container').getAttribute('next');
+            document.getElementById('next').href = goTo;
           } else {
             document.getElementById('nav-zone').removeEventListener('scroll', scrollHover);
             //document.querySelector('.slides').classList.toggle('on-top');
