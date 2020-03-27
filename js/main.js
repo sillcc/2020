@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const swup = new Swup({
     plugins: [
       new SwupPreloadPlugin(), 
-      new SwupOverlayTheme({
+      /*new SwupOverlayTheme({
         color: 'red',
-      })
+      })*/
     ]
   });
 
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         overview: false,
         help: false,
         history: false,
-        hash: false,
+        hash: true,
         center: false,
         controls: false,
         display: 'block',
@@ -100,6 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
         Reveal.next()
       });
 
+      var goToPrev = document.getElementById('nav-zone').getAttribute('prev');
+      document.getElementById('prev').href = goToPrev;
       Reveal.addEventListener( 'slidechanged', function( event ) {
         setTimeout(delay, 100);
         function delay() {
@@ -108,12 +110,15 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('nav-zone').addEventListener('scroll', scrollHover);
             //document.querySelector('.slides').classList.add('on-top');
             document.getElementById('nav-zone').style.zIndex = '+150';
+            var goToPrev = document.getElementById('nav-zone').getAttribute('prev');
+            document.getElementById('prev').href = goToPrev;
           } else if (progress === 1) {
-            var goTo = document.getElementById('slideshow-container').getAttribute('next');
-            document.getElementById('next').href = goTo;
+            var goToNext = document.getElementById('nav-zone').getAttribute('next');
+            document.getElementById('next').href = goToNext;
           } else {
             document.getElementById('nav-zone').removeEventListener('scroll', scrollHover);
             //document.querySelector('.slides').classList.toggle('on-top');
+            document.getElementById('prev').removeAttribute('href');
             document.getElementById('next').removeAttribute('href');
           }
         }
