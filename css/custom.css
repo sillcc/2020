@@ -360,12 +360,18 @@ main.index > header {
   border-radius: 100px 100px 50px 50px;
 }
 
-#index > .index.gallery > ol > li > img {
+#index > .index.gallery > ol > li > .aspectratio {
+  height: 0;
+  width: 100%;
+  padding-top: 56.25%;
+  background-position: center;
+  background-size: cover;
+  background-color: black;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
-  border-radius: 50px 50px 0 0;
+  border-radius: 50px 50px 0 0; 
 }
 
 #index > .index.gallery > ol > li > a {
@@ -386,6 +392,7 @@ main.index > header {
   background-color: rgba(1,1,1,0.9);
   font-family: "Suisse Int'l";
   font-size: 5rem;
+  z-index: +1;
 }
 
 .tile {
