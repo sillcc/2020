@@ -357,7 +357,7 @@ main.index > header {
 
 #index > .index.gallery > ol > li {
   background-color: rebeccapurple;
-  border-radius: 100px 100px 50px 50px;
+  border-radius: 50px;
 }
 
 #index > .index.gallery > ol > li > .aspectratio {
@@ -365,30 +365,25 @@ main.index > header {
   width: 100%;
   padding-top: 56.25%;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  background-color: black;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
   border-radius: 50px 50px 0 0; 
 }
 
-#index > .index.gallery > ol > li > a {
+#index > .index.gallery > ol > li > .aspectratio > a {
   display: none;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
   border-radius: 50px 50px 0 0;
 }
 
-#index > .index.gallery > ol > li:hover > a {
-  height: 100%;
-  width: 100%;
+#index > .index.gallery > ol > li:hover > .aspectratio > a {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 0;
+  height: 0;
+  width: 100%;
+  padding: calc(56.25% / 2) 0;
   background-color: rgba(1,1,1,0.9);
   font-family: "Suisse Int'l";
   font-size: 5rem;
@@ -573,7 +568,7 @@ main.reveal > footer {
 
 .nav-slides {
   position: inherit !important;
-  height: 100.1%;
+  height: 100%;
   width: 50%;
   pointer-events: auto;
 }
