@@ -107,7 +107,7 @@ footer {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding: var(--spacing);
+  padding: calc(var(--spacing) * 1.5) var(--spacing) var(--spacing) var(--spacing);
 }
 
 /*__Swup__*/
@@ -480,17 +480,21 @@ tr:last-of-type > td:last-of-type {
 /*__Page > About__*/
 
 main.about.wrapper {
-  background-color: whitesmoke;
+  background-color: white;
   color: black;
   /*border-radius: 100vw 100vw 0 0;*/
 }
 
 main.about > header {
   padding: 10vh var(--spacing) 10vh var(--spacing);
+  /*background-image: url(/assets/hands.jpg);
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;*/
 }
 
 main.about > footer {
-  padding: var(--spacing);
+  padding: calc(var(--spacing) * 1.5) var(--spacing) var(--spacing) var(--spacing);
 }
 
 #ego {
@@ -506,7 +510,7 @@ main.about > footer {
   max-width: 60vw;
   transform-style: preserve-3d;
   animation: rotate3d 60s linear 0s infinite normal;
-  position: absolute;
+  position: fixed;
   z-index: 10;
 }
 
