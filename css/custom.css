@@ -168,7 +168,7 @@ html.is-animating .transition-left {
 .splitting .char {
   position: relative;
   overflow: hidden;
-  display: block;
+  display: inline-block;
 }
 
 #index > .gallery > ol > li:hover > .splitting .char  {
@@ -197,7 +197,7 @@ html.is-animating .transition-left {
 .splitting .word {
   position: relative;
   overflow: hidden;
-  display: block;
+  display: inline-block;
 }
 
 .splitting .word  {
@@ -311,7 +311,7 @@ main.index > header {
 
 .sort {
   z-index: +1;
-  display: block;
+  display: inline-block;
   padding-bottom: var(--spacing);
 }
 
