@@ -355,7 +355,7 @@ main.index > header {
 
 #index > .index.gallery > ol > li {
   background-color: rebeccapurple;
-  border-radius: 50px;
+  border-radius: 40px;
 }
 
 #index > .index.gallery > ol > li > .aspectratio {
@@ -365,12 +365,13 @@ main.index > header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 50px 50px 0 0; 
+  background-color: black;
+  border-radius: 40px 40px 0 0; 
 }
 
 #index > .index.gallery > ol > li > .aspectratio > a {
   display: none;
-  border-radius: 50px 50px 0 0;
+  border-radius: 40px 40px 0 0;
 }
 
 #index > .index.gallery > ol > li:hover > .aspectratio > a {
