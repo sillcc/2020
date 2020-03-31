@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const swup = new Swup({
     plugins: [
       new SwupPreloadPlugin(), 
-      /*new SwupOverlayTheme({
+      new SwupOverlayTheme({
         color: 'red',
-      })*/
+      })
     ]
   });
 
