@@ -83,7 +83,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 a {
@@ -105,9 +105,7 @@ header a:hover{
 
 footer {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding: 15vh var(--spacing) var(--spacing) var(--spacing);
+  padding: calc(var(--spacing) * 1.5) var(--spacing) var(--spacing) var(--spacing);
 }
 
 /*__Swup__*/
@@ -190,8 +188,8 @@ html.is-animating .transition-left {
 
 .splitting .word {
   white-space: nowrap;
-  padding: 2rem 0;
-  margin: -2.25rem -.25rem;
+  padding: 20px 0;
+  margin: -22.5px -.5px;
 }
 
 .splitting .word {
@@ -233,29 +231,33 @@ main.reveal .splitting.on .word:after {
 
 /*__Helpers__*/
 
+.keep {
+  white-space: nowrap;
+}
+
 .has-text-responsive {
   font-size: calc(100vw / var(--char-total));
 }
 
 .has-text-small {
-  font-size: calc(0.5rem + 1vw);
+  font-size: calc(1rem + .5vw);
   letter-spacing: -0.01rem;
 }
 
 .has-text-normal {
-  font-size: calc(1rem + 1vw);
+  font-size: calc(1.25rem + .5vw);
   letter-spacing: -0.01rem;
 }
 
 .has-text-big {
-  font-size: calc(1.5rem + 1vw);
+  font-size: calc(1.75rem + .5vw);
 }
 
 .has-text-biggest {
-  font-size: calc(2rem + 1vw);
+  font-size: calc(2.5rem + .5vw);
   margin: 0;
-  letter-spacing: -0.05rem;
   font-family: "SportingGrotsque", sans-serif;
+  line-height: 1.05;
 }
 
 .has-bg-gradient {
@@ -353,35 +355,38 @@ main.index > header {
 
 #index > .index.gallery > ol > li {
   background-color: rebeccapurple;
-  border-radius: 50px;
+  border-radius: 40px;
 }
 
-#index > .index.gallery > ol > li > img {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  border-radius: 50px 50px 0 0;
-}
-
-#index > .index.gallery > ol > li > a {
-  display: none;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  border-radius: 50px 50px 0 0;
-}
-
-#index > .index.gallery > ol > li:hover > a {
-  height: 100%;
+#index > .index.gallery > ol > li > .aspectratio {
+  height: 0;
   width: 100%;
+  padding-top: 56.25%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: chocolate;
+  border-radius: 40px 40px 0 0; 
+}
+
+#index > .index.gallery > ol > li > .aspectratio > a {
+  display: none;
+  border-radius: 40px 40px 0 0;
+}
+
+#index > .index.gallery > ol > li:hover > .aspectratio > a {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 0;
+  height: 0;
+  width: 100%;
+  padding: calc(56.25% / 2) 0;
   background-color: rgba(1,1,1,0.9);
   font-family: "Suisse Int'l";
   font-size: 5rem;
+  z-index: +1;
 }
 
 .tile {
@@ -476,17 +481,21 @@ tr:last-of-type > td:last-of-type {
 /*__Page > About__*/
 
 main.about.wrapper {
-  background-color: whitesmoke;
+  background-color: white;
   color: black;
   /*border-radius: 100vw 100vw 0 0;*/
 }
 
 main.about > header {
-  padding:0 var(--spacing) 10vh var(--spacing);
+  padding: 10vh var(--spacing) 10vh var(--spacing);
+  /*background-image: url(/assets/hands.jpg);
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;*/
 }
 
 main.about > footer {
-  padding: var(--spacing);
+  padding: calc(var(--spacing) * 1.5) var(--spacing) var(--spacing) var(--spacing);
 }
 
 #ego {
@@ -496,10 +505,25 @@ main.about > footer {
 }
 
 #portrait {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
-  height: 50vh;
-  min-height: 50vh;
+  height: 40vh;
+  max-width: 60vw;
+  transform-style: preserve-3d;
+  animation: rotate3d 60s linear 0s infinite normal;
+  position: fixed;
+  z-index: 10;
+}
+
+@keyframes rotate3d {
+  from {
+      transform: rotateX(-360deg) rotateY(-360deg) rotateZ(-360deg);
+      transform-origin: 50% 50%;
+  }
+  to {
+      transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+      transform-origin: 50% 50%;
+  }
 }
 
 .duos {
@@ -507,7 +531,7 @@ main.about > footer {
   text-align: center; 
   animation: write 2s ease-in;
   animation-fill-mode: forwards;
-  font-size: calc(3.5rem + 7vw);
+  font-size: calc(3rem + 5vw);
   padding-bottom: 5px;
 }
 
@@ -543,7 +567,7 @@ main.reveal > footer {
 
 .nav-slides {
   position: inherit !important;
-  height: 100.1%;
+  height: 100%;
   width: 50%;
   pointer-events: auto;
 }
@@ -594,19 +618,10 @@ main.reveal > footer {
   color: white;
   display: grid;
   text-align: left;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-areas: 
-    "title title"
-    "tags dida";
 }
 
 .project-dida-container > .title {
   grid-area: title;
-}
-
-.project-dida-container > .tags {
-  grid-area: tags;
 }
 
 .project-dida-container > .dida {
@@ -643,7 +658,7 @@ main.reveal > footer {
     display: block;
   }
   .list {
-    grid-template-columns: repeat(auto-fit, minmax(calc(240px + 20vw), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(calc(120px + 20vw), 1fr));
   }
   .project-dida-container {
     grid-template-columns: 1fr;
@@ -651,16 +666,10 @@ main.reveal > footer {
     overflow: scroll;
     grid-template-areas:
       "title"
-      "tags"
       "dida";
   }
   .project-dida-container > .title {
     /*background-color: red;
-    color: black;*/
-    padding: 10px 25% 10px 10px;
-  }
-  .project-dida-container > .tags {
-    /*background-color: #f07300;
     color: black;*/
     padding: 10px;
   }
@@ -683,12 +692,12 @@ main.reveal > footer {
 }
 
 @media screen and (max-width: 976px) and (orientation: portrait) {
-  .has-text-small {
+  /*.has-text-small {
     font-size: calc(1rem + 8vw);
   }
   .has-text-normal {
     font-size: calc(1rem + 8vw);
-  }
+  }*/
   #logo {
     padding: 0 10vw 20vw 10vw;
   }
@@ -715,30 +724,19 @@ main.reveal > footer {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas: 
-      "title dida"
-      "tags dida";
+      "title title"
+      "dida dida";
   }
   
   .project-dida-container > .title {
     /*background-color: red;
     color: black;*/
-    padding: 10px 25% 10px 10px;
+    padding: 10px 10px 10px 50%;
     overflow: scroll;
-  }
-  
-  .project-dida-container > .tags {
-    /*background-color: #f07300;
-    color: black;*/
-    padding: 10px;
-    overflow: scroll;
-  }
-
-  .project-dida-container > .tags > p {
-    white-space: break-spaces;
   }
 
   .project-dida-container > .dida {
-    padding: 10px;
+    padding: 10px 10px 10px 50%;
     overflow: scroll;
   }
 }

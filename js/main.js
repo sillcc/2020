@@ -1,7 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   const swup = new Swup({
-    plugins: [new SwupPreloadPlugin()]
+    plugins: [
+      new SwupPreloadPlugin(), 
+      new SwupOverlayTheme({
+        color: 'red',
+      })
+    ]
   });
 
   function init() {
@@ -33,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
       var indexList = new List('index', options);
       indexList.sort('year', { order: 'desc' }); 
-      //document.body.style.backgroundColor = 'red';
+      document.body.style.backgroundColor = 'black';
       document.querySelectorAll('.tag').forEach(item => {
         item.addEventListener('click', (e) => {
           indexList.search(e.target.getAttribute('data-name'));
@@ -55,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         overview: false,
         help: false,
         history: false,
-        hash: false,
+        hash: true,
         center: false,
         controls: false,
         display: 'block',
@@ -95,6 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
         Reveal.next()
       });
 
+      var goToPrev = document.getElementById('nav-zone').getAttribute('prev');
+      document.getElementById('prev').href = goToPrev;
       Reveal.addEventListener( 'slidechanged', function( event ) {
         setTimeout(delay, 100);
         function delay() {
@@ -103,11 +110,15 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('nav-zone').addEventListener('scroll', scrollHover);
             //document.querySelector('.slides').classList.add('on-top');
             document.getElementById('nav-zone').style.zIndex = '+150';
+            var goToPrev = document.getElementById('nav-zone').getAttribute('prev');
+            document.getElementById('prev').href = goToPrev;
           } else if (progress === 1) {
-            document.getElementById('next').href = '/index.html';
+            var goToNext = document.getElementById('nav-zone').getAttribute('next');
+            document.getElementById('next').href = goToNext;
           } else {
             document.getElementById('nav-zone').removeEventListener('scroll', scrollHover);
             //document.querySelector('.slides').classList.toggle('on-top');
+            document.getElementById('prev').removeAttribute('href');
             document.getElementById('next').removeAttribute('href');
           }
         }
