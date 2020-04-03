@@ -1,13 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  const swup = new Swup({
+
+  const options = {
     plugins: [
       new SwupPreloadPlugin(), 
       new SwupOverlayTheme({
         color: 'red',
       })
     ]
-  });
+  };
+
+  const swup = new Swup(options); 
 
   function init() {
     Splitting();

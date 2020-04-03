@@ -365,7 +365,7 @@ main.index > header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: chocolate;
+  background-color: dimgray;
   border-radius: 40px 40px 0 0; 
 }
 
@@ -580,6 +580,14 @@ main.reveal > footer {
   opacity: .1;
 }
 
+#back-to-index {
+  color: white;
+  padding: 10px;
+  z-index: 1000;
+  width: 50%;
+  float: right;
+}
+
 .on-top {
   z-index: 100 !important;
 }
@@ -609,15 +617,15 @@ main.reveal > footer {
 }
 
 .project-dida-container {
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  top: 0;
+  height: 90%;
   cursor: default;
-  background-color: black;
   color: white;
   display: grid;
   text-align: left;
+  float: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .project-dida-container > .title {
@@ -661,6 +669,7 @@ main.reveal > footer {
     grid-template-columns: repeat(auto-fit, minmax(calc(120px + 20vw), 1fr));
   }
   .project-dida-container {
+    width: 100%;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     overflow: scroll;
@@ -721,6 +730,7 @@ main.reveal > footer {
   }
 
   .project-dida-container {
+    width: 50%;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas: 
@@ -731,12 +741,12 @@ main.reveal > footer {
   .project-dida-container > .title {
     /*background-color: red;
     color: black;*/
-    padding: 10px 10px 10px 50%;
+    padding: 10px 10px 10px 0;
     overflow: scroll;
   }
 
   .project-dida-container > .dida {
-    padding: 10px 10px 10px 50%;
+    padding: 10px 10px 10px 0;
     overflow: scroll;
   }
 }
