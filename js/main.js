@@ -24,12 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
       el.classList.add('on');
     });
 
-    document.querySelector('.fix-toTop').addEventListener('click', function toTop() {
-      setTimeout(delay, 500);
-      function delay() {
+    swup.on('contentReplaced', function() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
-      }
     });
     
     if (document.querySelector('#index')) {
