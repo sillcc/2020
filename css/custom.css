@@ -187,7 +187,7 @@ html.is-animating .transition-left {
 }*/
 
 h1 .word:first-of-type {
-  margin-left: 10vw;
+  margin-left: var(--spacing);
 }
 
 .splitting .word {
@@ -587,11 +587,13 @@ main.reveal > footer {
 
 #back-to-index {
   color: white;
-  padding: 10px;
   z-index: 1000;
-  width: 50%;
   position: absolute;
   bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 .on-top {

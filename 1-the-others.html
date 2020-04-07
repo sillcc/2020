@@ -18,7 +18,11 @@
 <body>
 
   <main id="swup" class="wrapper transition-fade reveal">
-    <a href="about.html" id="back-to-index" class="has-text-big">← Index</a>
+    <div id="back-to-index">
+      <a class="has-text-big keep">← Prev</a>
+      <a href="/index.html" class="has-text-big keep has-cursor-pointer">Index</a>
+      <a class="has-text-big keep">Next →</a>
+    </div>
     <div id="nav-zone" prev="/index.html" next="/2-ibm.html">
       <a id="prev" class="nav-slides" style="left: 0;">
         <div id="cursor">
@@ -32,7 +36,7 @@
         <div class="slides on-top">
           <!--1 | The Others-->
           <section data-state="onTop" data-background-color="black">
-            <div class="project-dida-container">
+            <div class="project-dida-container" data-splitting>
               <div class="title has-text-big">
                 <p>The Others Art Fair 2018 contest entry</p>
               </div>
