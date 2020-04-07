@@ -23,6 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
     .on('enter', el => {
       el.classList.add('on');
     });
+
+    document.querySelector('.fix-toTop').addEventListener('click', function toTop() {
+      setTimeout(delay, 500);
+      function delay() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    });
     
     if (document.querySelector('#index')) {
 

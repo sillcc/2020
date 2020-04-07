@@ -186,6 +186,10 @@ html.is-animating .transition-left {
   content: attr(data-char);
 }*/
 
+h1 .word:first-of-type {
+  margin-left: 10vw;
+}
+
 .splitting .word {
   white-space: nowrap;
   padding: 20px 0;
@@ -295,8 +299,7 @@ main.reveal .splitting.on .word:after {
 /*__Page > Index__*/
 
 main.index.wrapper {
-  background-color: red;
-  color: black;
+  background-color: #191a1a;
 }
 
 main.index > header {
@@ -354,8 +357,9 @@ main.index > header {
 }
 
 #index > .index.gallery > ol > li {
-  background-color: rebeccapurple;
-  border-radius: 40px;
+  background-color: #333333;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 #index > .index.gallery > ol > li > .aspectratio {
@@ -366,12 +370,12 @@ main.index > header {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: dimgray;
-  border-radius: 40px 40px 0 0; 
+  border-radius: 10px 10px 0 0; 
 }
 
 #index > .index.gallery > ol > li > .aspectratio > a {
   display: none;
-  border-radius: 40px 40px 0 0;
+  border-radius: 10px 10px 0 0;
 }
 
 #index > .index.gallery > ol > li:hover > .aspectratio > a {
@@ -383,7 +387,8 @@ main.index > header {
   height: 0;
   width: 100%;
   padding: calc(56.25% / 2) 0;
-  background-color: rgba(1,1,1,0.9);
+  background-color: red;
+  opacity: .9;
   font-family: "Suisse Int'l";
   font-size: 5rem;
   z-index: +1;
@@ -445,11 +450,11 @@ tbody > tr:hover > td:first-of-type {
 }
 
 tbody > tr:hover > td:first-of-type > img {
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 tbody > tr:hover > td:first-of-type > a {
-  padding-bottom: 40px;
+  padding-bottom: 10px;
 }
 
 tbody > tr:hover > td:last-of-type {
@@ -511,7 +516,7 @@ main.about > footer {
   max-width: 60vw;
   transform-style: preserve-3d;
   animation: rotate3d 60s linear 0s infinite normal;
-  position: fixed;
+  position: absolute;
   z-index: 10;
 }
 
@@ -585,7 +590,8 @@ main.reveal > footer {
   padding: 10px;
   z-index: 1000;
   width: 50%;
-  float: right;
+  position: absolute;
+  bottom: 0;
 }
 
 .on-top {
@@ -617,15 +623,11 @@ main.reveal > footer {
 }
 
 .project-dida-container {
-  height: 90%;
+  height: 100%;
   cursor: default;
   color: white;
   display: grid;
   text-align: left;
-  float: right;
-  position: absolute;
-  bottom: 0;
-  right: 0;
 }
 
 .project-dida-container > .title {
@@ -671,7 +673,7 @@ main.reveal > footer {
   .project-dida-container {
     width: 100%;
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: auto 1fr;
     overflow: scroll;
     grid-template-areas:
       "title"
@@ -726,13 +728,14 @@ main.reveal > footer {
   }
 
   .list {
-    grid-template-columns: repeat(auto-fit, minmax(calc(240px + 20vw), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(calc(120px + 20vw), 1fr));
   }
 
   .project-dida-container {
     width: 50%;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: auto 1fr;
+    float: right;
     grid-template-areas: 
       "title title"
       "dida dida";
@@ -741,12 +744,12 @@ main.reveal > footer {
   .project-dida-container > .title {
     /*background-color: red;
     color: black;*/
-    padding: 10px 10px 10px 0;
+    padding: 10px;
     overflow: scroll;
   }
 
   .project-dida-container > .dida {
-    padding: 10px 10px 10px 0;
+    padding: 10px;
     overflow: scroll;
   }
 }
