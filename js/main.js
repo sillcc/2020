@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-
+  
   const options = {
     plugins: [
       new SwupPreloadPlugin(), 
@@ -10,9 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     ]
   };
 
-  const swup = new Swup(options); 
+  const swup = new Swup(options);
 
   function init() {
+    
     Splitting();
     
     var rellax = new Rellax('.rellax', {

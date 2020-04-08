@@ -71,7 +71,7 @@ html {
 
 body {
   font-family: "Suisse Int'l Book", sans-serif;
-  line-height: 1;
+  line-height: 1 !important;
 }
 
 .wrapper {
@@ -299,7 +299,8 @@ main.reveal .splitting.on .word:after {
 /*__Page > Index__*/
 
 main.index.wrapper {
-  background-color: #191a1a;
+  background-color: #252422;
+  color: red;
 }
 
 main.index > header {
@@ -357,7 +358,8 @@ main.index > header {
 }
 
 #index > .index.gallery > ol > li {
-  background-color: #333333;
+  background-color: #403d39;
+  color: #252422;
   border-radius: 10px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
@@ -585,6 +587,18 @@ main.reveal > footer {
   opacity: .1;
 }
 
+.play {
+  font-family: 'Font Awesome 5 Free';
+}
+
+.play:after {
+  content:"";
+}
+
+#prev:hover .play:after {
+  content:"";
+}
+
 #back-to-index {
   color: white;
   z-index: 1000;
@@ -737,7 +751,6 @@ main.reveal > footer {
     width: 50%;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto 1fr;
-    float: right;
     grid-template-areas: 
       "title title"
       "dida dida";
