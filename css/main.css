@@ -64,6 +64,12 @@ html {
 /*__ Global > Formatting __*/
 
 h1 {
+  font-size: 2.5rem;
+  font-family: 'HankenGroteskRegular', 'HKGroteskRegular', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  color: var(--main-color);
+}
+
+h2 {
   font-size: 2rem;
   font-family: 'HankenGroteskRegular', 'HKGroteskRegular', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
   color: var(--main-color);
@@ -72,28 +78,40 @@ h1 {
           hyphens: auto;
 }
 
-h1, h1 * {
+h2, h2 * {
   line-height: 1.3;
 }
 
-h2 {
-  font-size: 2rem
+main#index h2:not(:last-child) {
+  margin-bottom: 3rem;
 }
 
 h3 {
-  font-size: 1.375rem
+  font-size: 1.375rem;
 }
 
 h4 {
-  font-size: 1.125rem
+  font-size: 1.125rem;
+}
+
+main#index h4.col-4 {
+  padding-bottom: 2.5rem;
+}
+
+main#index .col-8 h4 {
+  margin-bottom: .5rem;
+}
+
+main#index .col-8 h4:last-of-type {
+  margin-bottom: 2.5rem;
 }
 
 h5 {
-  font-size: 1rem
+  font-size: 1rem;
 }
 
 h6 {
-  font-size: .875rem
+  font-size: .875rem;
 }
 
 p {
@@ -222,7 +240,7 @@ main.reveal a {
 .row [class^=col] {
   float: left;
   margin: .5rem 2%;
-  min-height: .125rem
+  min-height: .125rem;
 }
 
 .col-1,
@@ -366,6 +384,14 @@ main.reveal a {
 }
 
 /*__ Main > Cards __*/
+
+#grid-for-cards {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc(200px + 10%), 1fr));
+  gap: .75rem;
+  padding-bottom: 1rem;
+}
 
 .card {
   margin-right: 25px;
@@ -855,8 +881,8 @@ section.present.on-top {
 }
 
 section.on-top:first-of-type {
-  -webkit-animation: bgFix 1s;
-          animation: bgFix 1s;
+  -webkit-animation: bgFix .5s;
+          animation: bgFix .5s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
   -webkit-animation-timing-function: steps(1);
