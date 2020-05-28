@@ -854,13 +854,13 @@ section.present.on-top {
   100.0%  {background-color:red;}
 }
 
-section.present.on-top {
+section.on-top:first-of-type {
   -webkit-animation: bgFix 1s;
           animation: bgFix 1s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
-  -webkit-animation-timing-function: steps(0);
-          animation-timing-function: steps(0);
+  -webkit-animation-timing-function: steps(1);
+          animation-timing-function: steps(1);
 }
 
 @-webkit-keyframes bgFix {
