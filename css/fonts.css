@@ -1,0 +1,60 @@
+/*__ HK __*/
+
+
+@font-face {
+  font-family: 'HankenGroteskRegular';
+  src: url('fonts/HK/HankenGrotesk-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'HankenGroteskMedium';
+  src: url('fonts/HK/HankenGrotesk-Medium.woff') format('woff');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'HKGroteskRegular';
+  src: url('fonts/HK/HKGrotesk-Regular.eot') format('eot'),
+  url('fonts/HK/HKGrotesk-Regular.woff') format('woff'),
+  url('fonts/HK/HKGrotesk-Regular.woff2') format('woff2'),
+  url('fonts/HK/HKGrotesk-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'HKGroteskMedium';
+  src: url('fonts/HK/HKGrotesk-Medium.eot') format('eot'),
+  url('fonts/HK/HKGrotesk-Medium.woff') format('woff'),
+  url('fonts/HK/HKGrotesk-Medium.woff2') format('woff2'),
+  url('fonts/HK/HKGrotesk-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 500;
+}
+
+
+/*__ Minipax __*/
+
+
+@font-face {
+  font-family: 'MinipaxMedium';
+  src: url('fonts/minipax/Minipax-Medium.eot') format('eot'),
+  url('fonts/minipax/Minipax-Medium.woff') format('woff'),
+  url('fonts/minipax/Minipax-Medium.woff2') format('woff2'),
+  url('fonts/minipax/Minipax-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* @font-face {
+  font-family: 'MinipaxRegular';
+  src: url('fonts/minipax/Minipax-Regular.eot') format('eot'),
+  url('fonts/minipax/Minipax-Regular.woff') format('woff'),
+  url('fonts/minipax/Minipax-Regular.woff2') format('woff2'),
+  url('fonts/minipax/Minipax-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+} */

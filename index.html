@@ -1,131 +1,269 @@
 <!doctype html>
-<html>
+<html lang="en-US" style="background-color: white;">
 
 <head>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>⚜️ sil</title>
+
+  <title>Silviu Chiriac — Portfolio</title>
+
+  <meta name="theme-color" content="#05f">
+  <meta name="description" content="A description of the page">
+
+  <!-- <base href="https://silviu.xyz/"> -->
+
+  <link rel="icon" type="image/png" href="assets/favicon-32x32.png" sizes="32x32" />
+
   <!--css-->
+  <!-- <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hk-grotesk" type="text/css" /> -->
+  <!-- <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/minipax" type="text/css" /> -->
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/custom.css">
-  <link rel="stylesheet" href="css/reveal.min.css">
-  <link rel="stylesheet" href="css/la-var.css">
-  <!--js-->
-  <!--<script src="js/viewport.js"></script>-->
+  <link rel="stylesheet" href="css/main.css">
+
 </head>
 
 <body>
 
-  <main id="swup" class="wrapper transition-fade index">
-    <!--<svg preserveAspectRatio="none" baseProfile="basic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332 200" style="height: 100vh; width: 100vw; position:fixed; fill:blue; mix-blend-mode: difference; mask-image: linear-gradient(180deg, rgb(0, 0, 0), 50%, transparent);pointer-events:none;">
-      <path d="M9 108.9L-.2 0h19.5L28 108.9H9zM38 200H16.9l-7.4-85.8H44L38 200zm-7.7-91.1L37.5 0h16.3l7.1 108.9H30.3zM74 200H53.2l-6.1-85.8h34.2L74 200zm-10.8-91.1L71.9 0h19.5l-9.5 108.9H63.2zM98.5 17.9v-3.7L112.7 0h22.1l13.9 14.2v3.7H98.5zm0 158.9V23.2H118v153.7H98.5zm50.3 9L134.6 200h-21.8l-14.2-14.2v-3.7h50.3v3.7zm-19.5-9V23.2h19.5v153.7h-19.5zM159.3 17.9V0h36.1l14.2 14.2v3.7h-50.3zm50.3 72.9l-9.2 8.9 9.2 9.2V200h-19.5v-91.1h-11.3V200h-19.5V23.2h19.5v67.9h11.3V23.2h19.5v67.6zM220.1 58.7V0h19.5v58.7h-19.5zm0 77.4V63.9h41.6l-7.1 36.3 7.1 35.8h-41.6zm19.5 63.9h-19.5v-58.7h19.5V200zm4.2-141.3L255.1 0h19.2l-11.6 58.7h-18.9zM274.3 200h-19.2l-11.3-58.7h18.9l11.6 58.7zM281.9 17.9v-3.7L296.1 0H318l14.2 14.2v3.7h-50.3zm30.8 158.9v-67.9h-16.6L281.9 95V23.2h19.5v67.9H318l14.2 13.7v72.1h-19.5zm-30.8 0v-28.7h19.5v28.7h-19.5zm50.3 9L318 200h-21.8L282 185.8v-3.7h50.3v3.7zm0-134h-19.5V23.2h19.5v28.6z"/>
-    </svg>-->
-    <header class="has-text-small">
-      <div>
-        <p class="duos">Works</p>
-      </div>
-      <!--<div>
-        <a href="#" class="is-active">Best works</a>
-      </div>
-      <div class="only-desktop">
-        <a href="#">CV</a>
-      </div>-->
+  <main id="index">
+    <aside id="svgContainer">
+    </aside>
+    <header>
+      <h1 id="titlone">Ciao!</h1>
     </header>
-    <main id="index">
-      <div class="index gallery">
-        <span class="sort has-text-big" data-sort="year"></span>
-        <ol class="list">
-          <li class="tile" data-year="2017-1" data-tags="test">
-            <div class="aspectratio" style="background-image: url(/assets/covers/-1.jpg)">
-              <a href="/1-the-others.html" data-splitting>→</a>
-            </div>
-            <div class="marquee3k" style="overflow-x: scroll;padding: calc(1rem + .5vw) 0">
-              <p class="has-text-small"><span>📌 Graphic Design</span> <span>📌 Graphic Design</span> <span>📌 Graphic Design</span> <span>📌 Graphic Design</span> <span>📌 Graphic Design</span></p>
-            </div>
-            <p class="has-text-biggest" style="padding: 0 calc(1rem + .5vw) calc(1rem + .5vw) calc(1rem + .5vw);text-transform: uppercase;text-align: center;">2017</p>
-          </li>
-          <li class="tile" data-year="2018-1">
-            <div class="aspectratio" style="background-image: url(/assets/2-ibm/-3.jpg)">
-              <a href="/2-ibm.html" data-splitting>→</a>
-            </div>
-            <div class="marquee3k" style="overflow-x: scroll;padding: calc(1rem + .5vw) 0">
-              <p class="has-text-small"><span>📌 Graphic Design</span> <span>📌 Graphic Design</span> <span>📌 Graphic Design</span> <span>📌 Graphic Design</span> <span>📌 Graphic Design</span></p>
-            </div>
-            <p class="has-text-biggest" style="padding: 0 calc(1rem + .5vw) calc(1rem + .5vw) calc(1rem + .5vw);text-transform: uppercase;text-align: center;">2018</p>
-          </li>
-          <li class="tile" data-year="2018-2">
-            <div class="aspectratio" style="background-image: url(/assets/covers/-3.jpg)">
-              <a href="/3-internesque.html" data-splitting>→</a>
-            </div>
-            <div class="marquee3k" style="overflow-x: scroll;padding: calc(1rem + .5vw) 0">
-              <p class="has-text-small"><span>📌 Graphic Design</span> <span>📌 Graphic Design</span> <span>📌 Graphic Design</span> <span>📌 Graphic Design</span> <span>📌 Graphic Design</span></p>
-            </div>
-            <p class="has-text-biggest" style="padding: 0 calc(1rem + .5vw) calc(1rem + .5vw) calc(1rem + .5vw);text-transform: uppercase;text-align: center;">2018</p>
-          </li>
-          <li class="tile" data-year="2019-1" data-tags="test">
-            <div class="aspectratio" style="background-image: url(/assets/covers/-4.jpg)">
-              <a href="/4-standout.html" data-splitting>→</a>
-            </div>
-            <div class="marquee3k" style="overflow-x: scroll;padding: calc(1rem + .5vw) 0">
-              <p class="has-text-small"><span>📌 Graphic Design</span> <span>📌 Graphic Design</span> <span>📌 Graphic Design</span> <span>📌 Graphic Design</span> <span>📌 Graphic Design</span></p>
-            </div>
-            <p class="has-text-biggest" style="padding: 0 calc(1rem + .5vw) calc(1rem + .5vw) calc(1rem + .5vw);text-transform: uppercase;text-align: center;">2019</p>
-          </li>
-          <li class="tile" data-year="2019-2" data-tags="pippo">
-            <div class="aspectratio" style="background-image: url(/assets/covers/-5.jpg)">
-              <a href="/5-self.html" data-splitting>→</a>
-            </div>
-            <div class="marquee3k" style="overflow-x: scroll;padding: calc(1rem + .5vw) 0">
-              <p class="has-text-small"><span>📌 Graphic Design</span> <span>📌 Graphic Design</span> <span>📌 Graphic Design</span> <span>📌 Graphic Design</span> <span>📌 Graphic Design</span></p>
-            </div>
-            <p class="has-text-biggest" style="padding: 0 calc(1rem + .5vw) calc(1rem + .5vw) calc(1rem + .5vw);text-transform: uppercase;text-align: center;">2019</p>
-          </li>
-          <li class="tile" data-year="2020">
-            <div class="aspectratio" style="background-image: url(/assets/covers/-6.jpg)">
-              <a href="/6-reverso.html" data-splitting>→</a>
-            </div>
-            <div class="marquee3k" style="overflow-x: scroll;padding: calc(1rem + .5vw) 0">
-              <p class="has-text-small"><span>📌 Graphic Design</span> <span>📌 Graphic Design</span> <span>📌 Graphic Design</span> <span>📌 Graphic Design</span> <span>📌 Graphic Design</span></p>
-            </div>
-            <p class="has-text-biggest" style="padding: 0 calc(1rem + .5vw) calc(1rem + .5vw) calc(1rem + .5vw);text-transform: uppercase;text-align: center;">2020</p>
-          </li>
-          <li class="tile" data-year="3000">
-            <div class="aspectratio" style="background-image: url(/assets/covers/-8.jpg)">
-              <a href="/8-recycling.html" data-splitting>→</a>
-            </div>
-            <div class="marquee3k" style="overflow-x: scroll;padding: calc(1rem + .5vw) 0">
-              <p class="has-text-small"><span>📌 Graphic Design</span> <span>📌 Graphic Design</span> <span>📌 Graphic Design</span> <span>📌 Graphic Design</span> <span>📌 Graphic Design</span></p>
-            </div>
-            <p class="has-text-biggest" style="padding: 0 calc(1rem + .5vw) calc(1rem + .5vw) calc(1rem + .5vw);text-transform: uppercase;text-align: center;">On</p>
-          </li>
-        </ol>
+    <div id="main">
+      <div class="container">
+        <div class="row">
+          <h1 class="col-12">
+            <span>Hey there!</span> I'm <span>Silviu Chiriac</span>, a young visual designer willing to work across a
+            variety of different media, applying my knowlodge at disposal artistic and cultural institutions,
+            educational organisations and small business.
+            <br><br>
+            I was <span>born on 16/06/1997</span> in a small town in eastern <span>Romania</span> called
+            <span>Galați</span>. Then things came along and * puff * I ended up <span>living in Turin</span> while
+            growing. I consider myself a chill person, down to earth, always eager to learn more.
+            <br><br>
+            I love to juggle with <span>forms</span>, <span>type</span> and <span>colors</span> in order to achive a
+            particular message. When I have free time, I like to spend it on DIY projects or lurking.
+            <br><br>
+            My top picks:
+          </h1>
+        </div>
       </div>
-    </main>
-    <footer class="has-text-normal">
-      <div style="display: inline-block;">
-        <a href="/about.html" class="fix-toTop keep">← <span style="text-decoration: solid underline 2px;">Read more about me</span></a>
+      <div class="container">
+        <div class="row">
+          <div class="col-12"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(calc(200px + 10%), 1fr)); gap: .75rem; padding-bottom: 1rem;">
+            <article class="card">
+              <div class="card_head">
+                <small class="card_year">+ Ongoing</small>
+              </div>
+              <div class="card_img" style="background-image: url('assets/covers/-7.jpg');"></div>
+              <a href="lab/line_awesome/index.html">
+                <div class="card_foot">
+                  <h3 class="card_title">Line Awesome Variable: when variable fonts meet icon fonts</h3>
+                  <h5 class="card_category">🏷️ Typography 🏷️ Dev</h5>
+                </div>
+              </a>
+            </article>
+            <article class="card">
+              <div class="card_head">
+                <small class="card_year">+ Added on 2020</small>
+              </div>
+              <div class="card_img" style="background-image: url('assets/covers/-12.jpg');"></div>
+              <a href="https://gitpull.it/project/profile/2/">
+                <div class="card_foot">
+                  <h3 class="card_title">BusTo app redesign</h3>
+                  <h5 class="card_category">🏷️ Icon 🏷️ UI</h5>
+                </div>
+              </a>
+            </article>
+            <article class="card">
+              <div class="card_head">
+                <small class="card_year">+ Ongoing</small>
+              </div>
+              <div class="card_img" style="background-image: url('assets/covers/-11.jpg');"></div>
+              <a href="../undefined.html">
+                <div class="card_foot">
+                  <h3 class="card_title">Madama beer new packaging proposal</h3>
+                  <h5 class="card_category">🏷️ Branding 🏷️ Packaging</h5>
+                </div>
+              </a>
+            </article>
+            <article class="card">
+              <div class="card_head">
+                <small class="card_year">+ Added on 2020</small>
+              </div>
+              <div class="card_img" style="background-image: url('assets/covers/-6.gif');"></div>
+              <a href="../6-reverso.html">
+                <div class="card_foot">
+                  <h3 class="card_title">Reverso: a video interview format</h3>
+                  <h5 class="card_category">🏷️ Motion 🏷️ Social</h5>
+                </div>
+              </a>
+            </article>
+            <article class="card">
+              <div class="card_head">
+                <small class="card_year">+ Added on 2020</small>
+              </div>
+              <div class="card_img" style="background-image: url('assets/covers/-5.jpg');"></div>
+              <a href="../5-self.html">
+                <div class="card_foot">
+                  <h3 class="card_title">Self made brand?</h3>
+                  <h5 class="card_category">🏷️ Branding 🏷️ Lettering</h5>
+                </div>
+              </a>
+            </article>
+            <article class="card">
+              <div class="card_head">
+                <small class="card_year">+ Added on 2020</small>
+              </div>
+              <div class="card_img" style="background-image: url('assets/covers/-4.jpg');"></div>
+              <a href="../4-standout.html">
+                <div class="card_foot">
+                  <h3 class="card_title">Standout: a self sustaining exhibit stand</h3>
+                  <h5 class="card_category">🏷️ Branding 🏷️ Product</h5>
+                </div>
+              </a>
+            </article>
+            <article class="card">
+              <div class="card_head">
+                <small class="card_year">+ Added on 2020</small>
+              </div>
+              <div class="card_img" style="background-image: url('assets/covers/-3.jpg');"></div>
+              <a href="../3-internesque.html">
+                <div class="card_foot">
+                  <h3 class="card_title">Internesque: a pattern generator that lurks the web</h3>
+                  <h5 class="card_category">🏷️ Branding 🏷️ Fashion</h5>
+                </div>
+              </a>
+            </article>
+            <article class="card">
+              <div class="card_head">
+                <small class="card_year">+ Ongoing</small>
+              </div>
+              <div class="card_img" style="background-image: url('assets/covers/-2.jpg');"></div>
+              <a href="../2-ibm.html">
+                <div class="card_foot">
+                  <h3 class="card_title">IBM Plex™ Specimen</h3>
+                  <h5 class="card_category">🏷️ Editorial 🏷️ Typography</h5>
+                </div>
+              </a>
+            </article>
+            <article class="card">
+              <div class="card_head">
+                <small class="card_year">+ Added on 2020</small>
+              </div>
+              <div class="card_img" style="background-image: url('assets/covers/-1.jpg');"></div>
+              <a href="../1-the-others.html">
+                <div class="card_foot">
+                  <h3 class="card_title">The Others Art Fair 2018 call entry</h3>
+                  <h5 class="card_category">🏷️ Branding 🏷️ Campaign </h5>
+                </div>
+              </a>
+            </article>
+          </div>
+        </div>
       </div>
-      <div style="display: inline-block; float: right;">
-        <p class="only-desktop">Last edit: 15/10/2019</p>
+      <div class="container">
+        <div class="row">
+          <h4 class="col-4">
+            🎓 Experiences<br><br>
+          </h4>
+          <h4 class="col-8">
+            2019 — Internship at Bellissimo, 3 months, Torino<br>
+            2018 - 2019 — Torino Graphic Days v.3 - v.4 Volunteering<br>
+            Ongoing — Design & Communication Degree, Polytechnic of Turin (will graduate on July)<br><br>
+          </h4>
+          <h4 class="col-4">
+            🚀 Workshops<br><br>
+          </h4>
+          <h4 class="col-8">
+            2019 — Data Visualization ft. Mauro Melis<br>
+            2018 — "Formare/Astrarre" ft. Archivio Tipografico<br><br>
+          </h4>
+          <h4 class="col-4">
+            🎯 Main skills<br><br>
+          </h4>
+          <h4 class="col-8">
+            ‣ Branding: development of well recognizable identities while keeping consistency within rigid budget and
+            time constraints
+            <br>
+            ‣ Front-end: HTML, CSS (SCSS, SASS), li'l Javascript, Git, Bulma
+            <br>
+            ‣ Editorial: pagination and layout, file preparation and optimization for printing, supply management
+            <br><br>
+          </h4>
+          <h4 class="col-4">
+            📚 Learning<br><br>
+          </h4>
+          <h4 class="col-8">
+            ‣ UI Design for web and mobile
+            <br>
+            ‣ Motion for branding and UI
+            <br>
+            ‣ Front-end: more Javascript, npm, SEO, CMS, Webpack
+            <br><br>
+          </h4>
+          <h4 class="col-4">
+            ♻️ Eventually<br><br>
+          </h4>
+          <h4 class="col-8">
+            ‣ Product: development of cutomer journey, sketching, 3D
+            <br>
+            ‣ Digital Illustration
+            <br>
+            ‣ Type customization
+            <br><br>
+          </h4>
+          <h4 class="col-4">
+            📎 Files<br><br>
+          </h4>
+          <div class="col-3 col-8-sm tile">
+            <div class="tile-content">
+              <h4 class="tile-title"><u>cv.pdf</u></h4>
+              <small class="tile-subtitle text-gray">102KB · Public · 2020</small>
+            </div>
+          </div>
+          <a href="assets/downloads/cv.pdf" onclick="yeeah()" download>
+            <svg class="col-1 col-4-sm" style="transform: translateY(50%); fill: #05f"
+              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path
+                d="M12 5c3.453 0 5.891 2.797 5.567 6.78 1.745-.046 4.433.751 4.433 3.72 0 1.93-1.57 3.5-3.5 3.5h-13c-1.93 0-3.5-1.57-3.5-3.5 0-2.797 2.479-3.833 4.433-3.72-.167-4.218 2.208-6.78 5.567-6.78zm0-2c-4.006 0-7.267 3.141-7.479 7.092-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h13c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.521-5.408-.212-3.951-3.473-7.092-7.479-7.092zm-4 10h3v-4h2v4h3l-4 4-4-4z" />
+            </svg>
+          </a>
+          <div class="col-3 col-8-sm tile">
+            <div class="tile-content">
+              <h4 class="tile-title"><u>business-card.pdf</u></h4>
+              <small class="tile-subtitle text-gray">20KB · Ask for pass · 2019</small>
+            </div>
+          </div>
+          <a href="assets/downloads/business-card.pdf" onclick="yeeah()" download>
+            <svg class="col-1 col-4-sm" style="transform: translateY(50%); fill: #05f"
+              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path
+                d="M12 5c3.453 0 5.891 2.797 5.567 6.78 1.745-.046 4.433.751 4.433 3.72 0 1.93-1.57 3.5-3.5 3.5h-13c-1.93 0-3.5-1.57-3.5-3.5 0-2.797 2.479-3.833 4.433-3.72-.167-4.218 2.208-6.78 5.567-6.78zm0-2c-4.006 0-7.267 3.141-7.479 7.092-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h13c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.521-5.408-.212-3.951-3.473-7.092-7.479-7.092zm-4 10h3v-4h2v4h3l-4 4-4-4z" />
+            </svg>
+          </a>
+        </div>
       </div>
+    </div>
+    <footer class="container">
+      <div class="row">
+        <small class="col-12 center">
+          <a href="mailto:silwiu@pm.me">Mail</a> / <a href="https://t.me/@silwiu">Telegram</a> / <a
+            href="https://github.com/silwiu">Github</a> ❦ License: <a rel="license"
+            href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+        </small>
     </footer>
   </main>
 
-  <script src="js/reveal.js"></script>
-  <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
-  <script src="js/swuppreloadplugin.min.js"></script>
-  <script src="js/swupoverlaytheme.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
-  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
-  <script src="js/rellax.min.js"></script>
-  <script src="js/marquee3k.min.js"></script>
-  <script src="js/in-view.min.js"></script>
-  <!--<script src="js/sorttable.js"></script>-->
-  <script src="js/main.js"></script>
+  <script defer src="js/lottie.min.js"></script>
+  <script defer src="js/script.js"></script>
+  <script defer src="js/reveal.min.js"></script>
+  <script defer src="js/swup.min.js"></script>
+  <script defer src="js/swupoverlaytheme.min.js"></script>
 
 </body>
 
 </html>
-
-<!--mask-image: linear-gradient(180deg, rgb(0, 0, 0), 50%, transparent);-->

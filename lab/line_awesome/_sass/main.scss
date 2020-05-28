@@ -1,0 +1,351 @@
+@charset "utf-8";
+
+// Typography
+@font-face {
+  font-family: "Recursive";
+  src: url("../css/fonts/recursive.woff2") format("woff2-variations");
+  font-weight: 300 1000;
+}
+
+@font-face {
+  font-family: "Soulcraft";
+  src: url("../css/fonts/soulcraft.ttf");
+}
+
+@font-face {
+  src: url('../css/fonts/trilby/TrilbyVariable-VF-Edu.eot'); /* IE < 9 */
+  src: url('../css/fonts/trilby/TrilbyVariable-VF-Edu.eot?#') format("embedded-opentype"), /* IE 9 */
+       url('../css/fonts/trilby/TrilbyVariable-VF-Edu.woff2') format("woff2"),
+       url('../css/fonts/trilby/TrilbyVariable-VF-Edu.woff') format("woff");
+  font-family: 'TrilbyVariable';
+  font-style: normal;
+  font-weight: normal;
+  }
+
+// 1. Import the initial variables
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+@import "../node_modules/bulma/sass/utilities/functions";
+
+// 2. Set your own initial variables
+/*$white: hsl(0, 0%, 4%);
+$white-bis: hsl(0, 0%, 7%);
+$white-ter: hsl(0, 0%, 14%);
+
+$grey-lightest: hsl(0, 0%, 21%);
+$grey-lighter: hsl(0, 0%, 29%);
+$grey-light: hsl(0, 0%, 48%);
+$grey: hsl(0, 0%, 71%);
+$grey-dark: hsl(0, 0%, 86%);
+$grey-darker: hsl(0, 0%, 93%);
+
+$black-ter: hsl(0, 0%, 96%);
+$black-bis: hsl(0, 0%, 98%);
+$black: hsl(0, 0%, 100%);*/
+
+$family-sans-serif: "Recursive", sans-serif;
+$size-1: 4rem;
+
+// 3. Set the derived variables
+// $white-ter: #262730;
+$primary: #e5e059;
+$primary-invert: findColorInvert($primary);
+$primary-light: findLightColor($primary);
+$primary-dark: findDarkColor($primary);
+/*$light: $white-bis;
+$scheme-main: $white-ter;
+$scheme-main-bis: $scheme-main;
+$scheme-main-ter: $scheme-main;
+$scheme-invert: $white-ter;
+$scheme-invert-bis: $scheme-invert;
+$scheme-invert-ter: $scheme-invert;*/
+
+$scheme-main:$black-ter;
+$scheme-main-bis: $black-bis;
+$scheme-main-ter: $scheme-main;
+
+$text: $grey;
+$text-strong: $grey-lighter;
+$family-primary: "Recursive", sans-serif;
+$link: $primary;
+$link-hover: $primary;
+$custom-colors: ("searchbar-color": $grey-darker, "nav-color": $turquoise);
+
+.hero.is-fullheight {
+  min-height: calc(var(--vh, 1vh) * 100) !important;
+  transition: all .5s linear;
+}
+
+.is-mono {
+  font-variation-settings: "MONO" 1;
+}
+
+.is-casual {
+  font-variation-settings: "CASL" 1;
+}
+
+.is-italic {
+  font-variation-settings: "CASL" 1, "slnt" -15, "ital" 1;
+}
+
+//__//Custom
+$body-background-color: $grey-darker;
+
+$title-line-height: 0.9;
+$title-weight: normal;
+$subtitle-weight: 350;
+
+$footer-padding: 3rem 1.5rem 3rem;
+$footer-background-color: $grey-darker;
+
+$navbar-item-color: $grey-lightest;
+$navbar-item-hover-color: $primary;
+$navbar-item-active-color: $primary;
+$navbar-burger-color: $black-ter;
+
+$list-background-color: transparent;
+$list-shadow: none;
+$list-radius: 0;
+
+$button-focus-box-shadow-size: 0 0 0 0;
+
+$input-shadow: none;
+$input-placeholder-color: $grey;
+$input-icon-color: $grey;
+$input-icon-active-color: $primary;
+$input-focus-box-shadow-size: 0 0 0 0;
+
+//$section-padding: 3rem 3rem;
+
+.title.is-family-sans-serif {
+  font-variation-settings: "wght" 900, "CASL" 0, "slnt" 0, "MONO" 0, "ital" 0;
+  font-weight: 800;
+  //font-variation-settings: 'wght' 600;
+}
+
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  #main-icon {
+    display: none;
+  }
+  .subtitle {
+    visibility: hidden;
+  }
+}
+
+.highlight {
+  background-color: $grey-lightest !important;
+}
+
+code {
+  font-family: "Recursive", monospace !important;
+  font-variation-settings: "MONO" 1;
+}
+
+// 4. Import the rest of Bulma
+@import "../node_modules/bulma/bulma.sass";
+@import "../_sass/_bulmaDocs/bulmadocs.sass";
+//@import "../_sass/docs.sass";
+/*@import "../node_modules/bulma-tooltip/src/sass/index.sass";
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/button.sass";
+@import "../node_modules/bulma/sass/elements/container.sass";
+@import "../node_modules/bulma/sass/elements/icon.sass";
+@import "../node_modules/bulma/sass/elements/title.sass";
+@import "../node_modules/bulma/sass/grid/_all.sass";
+@import "../node_modules/bulma/sass/layout/_all.sass";
+@import "../node_modules/bulma/sass/components/tabs.sass"; */
+
+// 5. Other imports
+// @import "../css/la-var.css";
+// @import "../node_modules/@primer/css/utilities/index.scss";
+// @import "../node_modules/@primer/css/tooltips/index.scss";
+
+// After Imports Customization
+
+body {
+  letter-spacing: -0.03rem;
+}
+
+#bg {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: -10;
+	background: linear-gradient(-45deg, $orange, $purple, $cyan, $turquoise);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/*-- Header --*/
+
+.keep-unite {
+  white-space: nowrap !important;
+}
+
+.custom-header {
+  padding-right: 0.75% !important;
+  font-weight: 800;
+  animation: var-animated 2s ease infinite;
+}
+
+.has-background-gradient {
+  background: linear-gradient(-45deg, $green, $primary);
+  &.clipped {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &.button {
+    border-color: transparent;
+    color:rgba(0, 0, 0, 0.7);
+  }
+}
+
+/*-- Tooltip --*/
+
+#tooltip {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  pointer-events: none;
+  z-index: 10;
+  & > .notification {
+    @extend .notification;
+    border-radius: 0;
+  }
+  &.show {
+    transform: translate3d(0, 0%, 0);
+    transition: 400ms ease-out;
+  }
+  &.hide {
+    transform: translate3d(0, 100%, 0);
+    transition: 400ms ease-out;
+  }
+}
+
+/*-- Tiles grid --*/
+
+.field.has-addons {
+  margin: 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
+}
+
+.is-bordered {
+  border-top: 1px solid $grey;
+  border-bottom: 1px solid $grey-dark;
+}
+
+.square.button {
+  height: 0;
+  width: 100%;
+  padding-bottom: 50%;
+  padding-top: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.tag {
+  margin-top: 24px;
+  overflow: hidden;;
+}
+
+.tile.x1 {
+  flex: none !important;
+  @include mobile {
+    width: 33.33333%;
+  }
+  @include tablet {
+    width: 16.66667%;
+  }
+  @include desktop {
+    width: 16.66667%;
+  }
+  @include widescreen {
+    width: 16.66667%;
+  }
+  @include fullhd {
+    width: 8.33333%;
+  }
+}
+
+.tile.x2 {
+  flex: none !important;
+  @include mobile {
+    width: 66.66667%;
+  }
+  @include tablet {
+    width: 33.33333%;
+  }
+  @include desktop {
+    width: 33.33333%;
+  }
+  @include widescreen {
+    width: 33.33333%;
+  }
+  @include fullhd {
+    width: 16.66667%;
+  }
+}
+
+.tile.break {
+  flex-basis: 100%;
+  width: 0;
+}
+
+/*-- Danger Box --*/
+
+#danger-box {
+  background: repeating-linear-gradient(
+    -45deg,
+    $scheme-main,
+    $scheme-main 30px,
+    $yellow 30px,
+    $yellow 60px
+  );
+}
+
+.start-da-party {
+  animation: from-0-to-100 alternate infinite !important;
+  animation-duration: 1s !important;
+  animation-timing-function: ease-in-out !important;
+}
+
+/*-- Animations --*/
+
+@keyframes var-animated {
+  0% {
+    font-variation-settings: "wght" 800, "slnt" -15, "CASL" 1;
+  }
+  50% {
+    font-variation-settings: "wght" 300, "slnt" -15, "CASL" 0;
+  }
+  100% {
+    font-variation-settings: "wght" 800, "slnt" -15, "CASL" 1;
+  }
+}
+
+@keyframes from-0-to-100 {
+  0% {
+    font-variation-settings: "ANIM"0;
+  }
+
+  100% {
+    font-variation-settings: "ANIM"100;
+  }
+}
