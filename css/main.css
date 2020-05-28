@@ -20,7 +20,7 @@
   --spacing: calc(2rem + 5vw);
   --main-color: #05f;
   --complementary-color: yellow;
-  --tertiary-color: #1F1433;
+  --tertiary-color: #040404;
 }
 
 :root.is-fullscreen {
@@ -96,6 +96,7 @@ h4 {
 }
 
 main#index h4.col-4 {
+  color: var(--main-color);
   padding-bottom: 2.4rem;
 }
 
