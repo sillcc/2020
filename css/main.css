@@ -92,19 +92,24 @@ h3 {
 
 h4 {
   font-size: 1.15rem;
-  line-height: 1.4;
 }
 
 main#index h4.col-4 {
-  color: var(--main-color);
+  font-family: 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
   padding-bottom: 2.4rem;
 }
 
 main#index .col-8 h4 {
-  margin-bottom: .6rem;
+  font-family: 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  color: var(--main-color);
 }
 
-main#index .col-8 h4:last-of-type {
+main#index .col-8 small {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+}
+
+main#index .col-8 small:last-of-type {
   margin-bottom: 2.4rem;
 }
 
@@ -632,7 +637,7 @@ main#index header {
 
 #click-area a {
   cursor: none;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 .half-vw {
