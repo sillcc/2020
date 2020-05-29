@@ -56,6 +56,7 @@ html {
 
 * {
   font-family: 'MinipaxMedium', Georgia, 'Times New Roman', Times, serif;
+  font-variant-numeric: lining-nums;
   color: var(--tertiary-color);
   text-rendering: optimizeLegibility;
   line-height: 1.5;
