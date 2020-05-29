@@ -102,11 +102,13 @@ main#index h4.col-4 {
 main#index .col-8 h4 {
   font-family: 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
   color: var(--main-color);
+  line-height: initial;
+  margin-bottom: .5rem;
 }
 
 main#index .col-8 small {
   display: inline-block;
-  margin-bottom: 1.25rem;
+  margin-bottom: 2rem;
 }
 
 main#index .col-8 small:last-of-type {
