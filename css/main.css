@@ -97,7 +97,7 @@ h4 {
 
 main#index h4.col-4 {
   font-family: 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
-  padding-bottom: 2.4rem;
+  padding-bottom: 2.5rem;
 }
 
 main#index .col-8 h4 {
@@ -113,7 +113,7 @@ main#index .col-8 small {
 }
 
 main#index .col-8 small:last-of-type {
-  margin-bottom: 2.4rem;
+  margin-bottom: 2.5rem;
 }
 
 h5 {
