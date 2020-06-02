@@ -56,7 +56,6 @@ html {
 
 * {
   font-family: 'HankenGroteskMedium', 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
-  color: var(--tertiary-color);
   text-rendering: optimizeLegibility;
   line-height: 1.5;
 }
@@ -108,7 +107,6 @@ h5 {
 
 .col-8 h5 {
   /* font-variant-numeric: lining-nums; */
-  color: initial;
   display: inline-block;
   /* margin-bottom: 2rem; */
 }
@@ -181,24 +179,44 @@ main.reveal a {
   margin-right: auto
 }
 
-.in-display {
+.in-display-sans {
   font-family: 'HankenGroteskRegular', 'HKGroteskRegular', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  font-weight: 500;
 }
 
-.in-display-medium {
-  font-family: 'HankenGroteskMedium', 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+.in-display-serif {
+  font-family: 'MinipaxMedium', 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  font-weight: 500;
+}
+
+.in-display-italic {
+  font-family: 'Avara_Bold_Italic', Georgia, 'Times New Roman', Times, serif;
+  font-weight: 400;
 }
 
 .in-sans {
   font-family: 'HKGroteskRegular', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  font-weight: 400;
 }
 
 .in-sans-medium {
   font-family: 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  font-weight: 500;
 }
 
 .in-serif {
-  font-family: 'MinipaxMedium', Georgia, 'Times New Roman', Times, serif;
+  font-family: 'MinipaxMedium', 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  font-weight: 500;
+}
+
+.in-serif-black {
+  font-family: 'Avara_Black', Georgia, 'Times New Roman', Times, serif;
+  font-weight: 500;
+}
+
+.in-serif-italic {
+  font-family: 'Avara_Bold_Italic', Georgia, 'Times New Roman', Times, serif;
+  font-weight: 500;
 }
 
 .font-regular {
@@ -233,6 +251,14 @@ main.reveal a {
   color: var(--main-color);
 }
 
+.is-color-2 {
+  color: var(--complementary-color);
+}
+
+.is-color-3 {
+  color: var(--tertiary-color);
+}
+
 .has-cursor-pointer {
   cursor: pointer;
 }
@@ -251,12 +277,16 @@ main.reveal a {
   pointer-events: none;
 }
 
-.bottom-1_5 {
-  padding-bottom: 1.5rem;
+.bottom-2 {
+  padding-bottom: 2rem;
 }
 
-.bottom-0_5 {
-  padding-bottom: .75rem;
+.bottom-1 {
+  padding-bottom: 1rem;
+}
+
+.hyphens-on {
+  hyphens: auto;
 }
 
 /*__ Grid System __*/
@@ -964,7 +994,7 @@ section.on-top:first-of-type {
 .in-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-gap: 1rem;
+  grid-gap: 2rem;
   max-width: 100%;
 }
 
