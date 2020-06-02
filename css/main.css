@@ -55,7 +55,7 @@ html {
 }
 
 * {
-  font-family: 'MinipaxMedium', Georgia, 'Times New Roman', Times, serif;
+  font-family: 'HankenGroteskMedium', 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
   color: var(--tertiary-color);
   text-rendering: optimizeLegibility;
   line-height: 1.5;
@@ -65,14 +65,10 @@ html {
 
 h1 {
   font-size: 2rem;
-  font-family: 'HankenGroteskRegular', 'HKGroteskRegular', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
-  color: var(--main-color);
 }
 
 h2 {
   font-size: 2rem;
-  font-family: 'HankenGroteskRegular', 'HKGroteskRegular', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
-  color: var(--main-color);
   /* -webkit-hyphens: auto;
       -ms-hyphens: auto;
           hyphens: auto; */
@@ -90,52 +86,35 @@ h3 {
   font-size: 1.375rem;
 }
 
-.in-sans {
-  font-family: 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+h3.col-12 {
+  padding: 2.5rem 0;
 }
 
-main#index h3.col-4 {
-  /* font-family: 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; */
-  padding-bottom: 2.5rem;
+h3.col-12:first-of-type {
+  padding: 0 0 2.5rem 0;
 }
 
 h4 {
   font-size: 1.15rem;
 }
 
-main#index .col-8 h4 {
-  font-family: 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
-  color: var(--main-color);
+.col-8 h4 {
   line-height: initial;
-  margin-bottom: .75rem;
-}
-
-main#index .col-8 h4:first-of-type {
-  margin-top: .45Frem;
 }
 
 h5 {
   font-size: 1rem;
 }
 
-.nesting-fix {
-  margin: 0 !important;
-}
-
-.nesting-fix [class^="col"] {
-  margin: .5rem 2% 0 0;
-}
-
-main#index .col-8 h5 {
-  font-variant-numeric: lining-nums;
-  font-family: 'MinipaxMedium', Georgia, 'Times New Roman', Times, serif;
+.col-8 h5 {
+  /* font-variant-numeric: lining-nums; */
   color: initial;
   display: inline-block;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
 }
 
-main#index .col-8 h5 {
-  margin-bottom: 2.5rem;
+.col-8 h5 {
+  /* margin-bottom: 2.5rem; */
 }
 
 h6 {
@@ -164,7 +143,6 @@ main.reveal body * {
 }
 
 main.reveal * {
-  font-family: 'HankenGroteskMedium', 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
   color: white;
   line-height: 1.1;
 }
@@ -191,7 +169,7 @@ main.reveal a {
 }
 
 #noscript p {
-  font-family: 'HankenGroteskMedium', 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  font-family: 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
   color: white;
 }
 
@@ -201,6 +179,26 @@ main.reveal a {
 .container {
   margin-left: auto;
   margin-right: auto
+}
+
+.in-display {
+  font-family: 'HankenGroteskRegular', 'HKGroteskRegular', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+}
+
+.in-display-medium {
+  font-family: 'HankenGroteskMedium', 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+}
+
+.in-sans {
+  font-family: 'HKGroteskRegular', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+}
+
+.in-sans-medium {
+  font-family: 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+}
+
+.in-serif {
+  font-family: 'MinipaxMedium', Georgia, 'Times New Roman', Times, serif;
 }
 
 .font-regular {
@@ -251,6 +249,14 @@ main.reveal a {
   margin: auto;
   z-index: 2;
   pointer-events: none;
+}
+
+.bottom-1_5 {
+  padding-bottom: 1.5rem;
+}
+
+.bottom-0_5 {
+  padding-bottom: .75rem;
 }
 
 /*__ Grid System __*/
@@ -334,7 +340,7 @@ main.reveal a {
   width: 96%
 }
 
-.row::after {
+.row:after {
   content: '';
   display: table;
   clear: both
@@ -495,8 +501,6 @@ footer:before {
 }
 
 .card_year {
-  /* font-family: Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; */
-  font-family: 'MinipaxMedium', Georgia, 'Times New Roman', Times, serif;
   text-transform: uppercase;
   font-size: 13px;
   letter-spacing: 2px;
@@ -515,7 +519,6 @@ footer:before {
 
 .card_title {
   margin-bottom: 1.25rem;
-  font-family: 'HankenGroteskMedium', 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
   line-height: 1.15;
   color: white;
 }
@@ -960,7 +963,7 @@ section.on-top:first-of-type {
 
 .in-grid {
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 1fr 2fr;
   grid-gap: 1rem;
   max-width: 100%;
 }
