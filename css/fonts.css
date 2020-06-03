@@ -35,6 +35,17 @@
   font-weight: 500;
 }
 
+/*__ Ortica __*/
+
+
+@font-face {
+  font-family: 'OrticaBold';
+  src: url('fonts/Ortica/Ortica-Bold.otf') format('opentype'),
+  url('fonts/Ortica/Ortica-Bold.woff') format('woff'),
+  url('fonts/Ortica/Ortica-Bold') format('woff2');
+  font-weight: 700;
+}
+
 
 /*__ Minipax __*/
 
@@ -47,6 +58,16 @@
   url('fonts/minipax/Minipax-Medium.ttf') format('truetype');
   font-style: normal;
   font-weight: 500;
+}
+
+@font-face {
+  font-family: 'MinipaxSemiBold';
+  src: url('fonts/minipax/Minipax-SemiBold.eot') format('eot'),
+  url('fonts/minipax/Minipax-SemiBold.woff') format('woff'),
+  url('fonts/minipax/Minipax-SemiBold.woff2') format('woff2'),
+  url('fonts/minipax/Minipax-SemiBold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 600;
 }
 
 /* @font-face {

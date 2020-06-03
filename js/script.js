@@ -1,8 +1,8 @@
 var mouseContainer = document.body;
-var svgContainer = document.getElementById('svgContainer');
+var lottieContainer = document.getElementById('lottieContainer');
 
 var anim = bodymovin.loadAnimation({
-  container: svgContainer,
+  container: lottieContainer,
   animType: 'svg',
   autoplay: false,
   loop: false,
