@@ -532,7 +532,7 @@ footer:before {
 main#index header {
   z-index: 1;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   pointer-events: none;
   margin-bottom: 7.5rem;
   display: -webkit-box;
@@ -554,9 +554,9 @@ main#index header {
 
 main#index > * {
   -webkit-animation: fade .75s ease-in 1 forwards;
-  animation: fade .75s ease-in 1 forwards;
-  /* -webkit-animation-delay: .5s; */
-  /* animation-delay: .5s; */
+          animation: fade .75s ease-in 1 forwards;
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
   opacity: 0;
 }
 
@@ -571,8 +571,8 @@ main#index:after {
   z-index: 100;
   -webkit-animation: swipe .75s ease-in 1 forwards;
           animation: swipe .75s ease-in 1 forwards;
-  /* -webkit-animation-delay: .5s;
-          animation-delay: .5s; */
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
   -webkit-transform: scaleX(0);
       -ms-transform: scaleX(0);
           transform: scaleX(0);
