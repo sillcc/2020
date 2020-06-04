@@ -1,5 +1,5 @@
 bodymovin.loadAnimation({
-  container: lottieContainer2,
+  container: illu,
   animType: 'svg',
   autoplay: true,
   loop: true,
@@ -7,6 +7,11 @@ bodymovin.loadAnimation({
 });
 // https://lottiefiles.com/web-player?lottie_url=https%3A%2F%2Fassets6.lottiefiles.com%2Fpackages%2Flf20_EvfyyO.json
 // https://lottiefiles.com/23844-concept-man-flying-with-books
+
+// https://assets5.lottiefiles.com/packages/lf20_sugqmW.json
+// https://assets4.lottiefiles.com/packages/lf20_E3zV8N.json
+// https://assets6.lottiefiles.com/private_files/lf30_jlRfsc.json
+
 
 var mouseContainer = document.body;
 var lottieContainer = document.getElementById('lottieContainer');
