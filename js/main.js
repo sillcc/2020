@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const options = {
     plugins: [
       new SwupOverlayTheme({
-        color: 'var(--main-color)',
+        color: 'var(--color-1)',
       })
     ]
   };

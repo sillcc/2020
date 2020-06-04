@@ -18,10 +18,10 @@
   --view-mode: 75vh;
   --color-contrast: white;
   --spacing: calc(2rem + 5vw);
-  --main-color: #807b53;
-  --complementary-color: #242424;
-  --tertiary-color: whitesmoke;
-  --color-4: goldenrod;
+  --color-1: peru;
+  --color-2: #242424;
+  --color-3: whitesmoke;
+  --color-4: #ebd54c;
 }
 
 :root.is-fullscreen {
@@ -32,7 +32,6 @@
 
 body,
 html {
-  height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -56,8 +55,7 @@ html {
 }
 
 * {
-  font-family: 'HankenGroteskMedium', 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
-  font-family: "OrticaBold" !important;
+  font-family: "OrticaBold", Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
   text-rendering: optimizeLegibility;
   /* line-height: 1.5; */
 }
@@ -105,7 +103,6 @@ h5 {
 }
 
 .col-8 h5 {
-  /* font-variant-numeric: lining-nums; */
   /* display: inline-block; */
   /* margin-bottom: 2rem; */
 }
@@ -131,8 +128,7 @@ article a {
 /*__ Global > Index __*/
 
 footer a:hover {
-  font-family: 'Avara_Bold_Italic', Georgia, 'Times New Roman', Times, serif;
-  color: var(--main-color);
+  color: var(--color-1);
   text-decoration: none;
 }
 
@@ -174,7 +170,6 @@ main.reveal a {
 }
 
 #noscript p {
-  font-family: 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
   color: white;
 }
 
@@ -184,41 +179,6 @@ main.reveal a {
 .container {
   margin-left: auto;
   margin-right: auto
-}
-
-.in-display-sans {
-  font-family: 'HankenGroteskRegular', 'HKGroteskRegular', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
-}
-
-.in-display-serif {
-  font-family: 'MinipaxMedium', Georgia, 'Times New Roman', Times, serif;
-}
-
-.in-display-italic {
-  font-family: 'Avara_Bold_Italic', Georgia, 'Times New Roman', Times, serif;
-}
-
-.in-sans {
-  font-family: 'HKGroteskRegular', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
-}
-
-.in-sans-medium {
-  font-family: 'HKGroteskMedium', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
-}
-
-.in-serif {
-  font-family: 'MinipaxMedium', Georgia, 'Times New Roman', Times, serif;
-  font-variant-numeric: lining-nums;
-}
-
-.in-serif-bold {
-  font-family: 'MinipaxSemiBold', Georgia, 'Times New Roman', Times, serif;
-  font-variant-numeric: lining-nums;
-}
-
-.in-serif-italic {
-  font-family: 'Avara_Bold_Italic', Georgia, 'Times New Roman', Times, serif;
-  font-variant-numeric: lining-nums;
 }
 
 .font-regular {
@@ -249,16 +209,16 @@ main.reveal a {
   white-space: nowrap;
 }
 
-.is-blue {
-  color: var(--main-color);
+.is-color-1 {
+  color: var(--color-1);
 }
 
 .is-color-2 {
-  color: var(--complementary-color);
+  color: var(--color-2);
 }
 
 .is-color-3 {
-  color: var(--tertiary-color);
+  color: var(--color-3);
 }
 
 .is-color-4 {
@@ -495,7 +455,7 @@ footer:before {
 }
 
 .card:hover {
-  background: var(--color-4);
+  background: var(--color-1);
   /* box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1); */
   /* transform: scale(1.10, 1.10); */
 }
@@ -545,7 +505,7 @@ footer:before {
   font-size: 13px;
   letter-spacing: 2px;
   font-weight: 500;
-  color: var(--main-color);
+  color: var(--color-4);
 }
 
 .card_foot {
@@ -560,11 +520,11 @@ footer:before {
 .card_title {
   margin-bottom: 1.25rem;
   line-height: 1.15;
-  color: var(--complementary-color);
+  color: var(--color-2);
 }
 
 .card_category {
-  color: var(--tertiary-color);
+  color: var(--color-3);
 }
 
 /*__ Main > Animations __*/
@@ -590,16 +550,19 @@ main#index header {
   font-size: 5rem;
   display: inline-block;
   position: relative;
-  -webkit-animation: fade .75s ease-in 1 forwards;
-          animation: fade .75s ease-in 1 forwards;
-  -webkit-animation-delay: .5s;
-          animation-delay: .5s;
-  color: transparent;
 }
 
-main#index header:after {
+main#index > * {
+  -webkit-animation: fade .75s ease-in 1 forwards;
+  animation: fade .75s ease-in 1 forwards;
+  /* -webkit-animation-delay: .5s; */
+  /* animation-delay: .5s; */
+  opacity: 0;
+}
+
+main#index:after {
   content: '';
-  background: var(--main-color);
+  background: var(--color-1);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -608,8 +571,8 @@ main#index header:after {
   z-index: 100;
   -webkit-animation: swipe .75s ease-in 1 forwards;
           animation: swipe .75s ease-in 1 forwards;
-  -webkit-animation-delay: .5s;
-          animation-delay: .5s;
+  /* -webkit-animation-delay: .5s;
+          animation-delay: .5s; */
   -webkit-transform: scaleX(0);
       -ms-transform: scaleX(0);
           transform: scaleX(0);
@@ -670,31 +633,31 @@ main#index header:after {
 
 @-webkit-keyframes fade {
   0% {
-    color: transparent;
+    opacity: 0;
   }
   50% {
-    color: transparent;
+    opacity: 0;
   }
   50.001% {
-    color: var(--main-color);
+    opacity: 1;
   }
   100% {
-    color: var(--main-color);
+    opacity: 1;
   }
 }
 
 @keyframes fade {
   0% {
-    color: transparent;
+    opacity: 0;
   }
   50% {
-    color: transparent;
+    opacity: 0;
   }
   50.001% {
-    color: var(--main-color);
+    opacity: 1;
   }
   100% {
-    color: var(--main-color);
+    opacity: 1;
   }
 }
 
@@ -918,9 +881,6 @@ section.present.on-top {
   #click-area a {
     cursor: initial;
   }
-}
-
-@media screen and (max-width: 976px) and (orientation: portrait) {
 }
 
 @media screen and (min-width: 977px) {
