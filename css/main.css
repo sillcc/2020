@@ -553,8 +553,8 @@ main#index header {
 }
 
 main#index > * {
-  -webkit-animation: fade 1.5s ease-in 1 forwards;
-          animation: fade 1.5s ease-in 1 forwards;
+  -webkit-animation: fade 1.5s ease 1 forwards;
+          animation: fade 1.5s ease 1 forwards;
   /* -webkit-animation-delay: .5s; */
           /* animation-delay: .5s; */
   opacity: 0;
@@ -569,8 +569,8 @@ main#index:after {
   left: 0;
   right: 0;
   z-index: 100;
-  -webkit-animation: swipe 1.5s ease-in 1 forwards;
-          animation: swipe 1.5s ease-in 1 forwards;
+  -webkit-animation: swipe 1.5s ease 1 forwards;
+          animation: swipe 1.5s ease 1 forwards;
   /* -webkit-animation-delay: .5s; */
           /* animation-delay: .5s; */
   -webkit-transform: scaleX(0);
