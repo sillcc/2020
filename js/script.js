@@ -2,8 +2,8 @@ bodymovin.loadAnimation({
   container: illu,
   animType: 'svg',
   autoplay: true,
-  loop: true,
-  path: 'assets/boi.json',
+  loop: false,
+  path: 'assets/logo.json',
 });
 // https://lottiefiles.com/web-player?lottie_url=https%3A%2F%2Fassets6.lottiefiles.com%2Fpackages%2Flf20_EvfyyO.json
 // https://lottiefiles.com/23844-concept-man-flying-with-books
@@ -11,6 +11,8 @@ bodymovin.loadAnimation({
 // https://assets5.lottiefiles.com/packages/lf20_sugqmW.json
 // https://assets4.lottiefiles.com/packages/lf20_E3zV8N.json
 // https://assets6.lottiefiles.com/private_files/lf30_jlRfsc.json
+// https://lottiefiles.com/4419-presto-loading-buddy-poppin
+// https://lottiefiles.com/111-xuanwheel-logo
 
 
 var mouseContainer = document.body;
