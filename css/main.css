@@ -18,7 +18,7 @@
   --view-mode: 75vh;
   --color-contrast: white;
   --spacing: calc(2rem + 5vw);
-  --color-1: peru;
+  --color-1: #85bb76;
   --color-2: #242424;
   --color-3: whitesmoke;
   --color-4: #ebd54c;
@@ -727,7 +727,7 @@ main.reveal nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 10px;
+  padding: 10px 18px;
   pointer-events: all;
 }
 
@@ -801,8 +801,20 @@ section.present.on-top {
 .fade-in:nth-child(3) { -webkit-transition-delay: .6s; -o-transition-delay: .6s; transition-delay: .6s }
 
 .project-dida-container .title {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 18px;
+}
+
+#back-to-home {
+  font-family: sans-serif;
+  display: inline-block;
+  z-index: 1000;
+  pointer-events: all;
+}
+
+.project-dida-container .title h1:first-child {
   max-width: 75%;
-  padding: 10px;
 }
 
 .project-dida-container .dida {
@@ -820,7 +832,7 @@ section.present.on-top {
       -ms-flex-pack: center;
           justify-content: center;
   max-width: 840px;
-  padding: 10px;
+  padding: 10px 18px;
   margin: auto;
 }
 
