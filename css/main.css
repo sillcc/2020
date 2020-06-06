@@ -807,7 +807,7 @@ section.present.on-top {
 }
 
 #back-to-home {
-  font-family: sans-serif;
+  font-family: "sans-serif";
   display: inline-block;
   z-index: 1000;
   pointer-events: all;
