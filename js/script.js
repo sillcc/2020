@@ -3,7 +3,7 @@ bodymovin.loadAnimation({
   animType: 'svg',
   autoplay: true,
   loop: false,
-  path: 'assets/logo.json',
+  path: 'assets/explosion.json',
 });
 // https://lottiefiles.com/web-player?lottie_url=https%3A%2F%2Fassets6.lottiefiles.com%2Fpackages%2Flf20_EvfyyO.json
 // https://lottiefiles.com/23844-concept-man-flying-with-books
@@ -29,4 +29,8 @@ var anim = bodymovin.loadAnimation({
 
 function yeeah() {
   anim.goToAndPlay(0);
+};
+
+function toggleDarkMode() {
+  document.documentElement.classList.toggle('dark-mode');
 };
