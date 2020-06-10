@@ -19,13 +19,15 @@
   --color-contrast: white;
   --spacing: calc(2rem + 5vw);
   --color-1: red;
-  --color-2: white;
+  --color-1-inverted: peru;
+  --color-2: whitesmoke;
   --color-3: #121212;
   --color-4: #121212;
 }
 
 :root.dark-mode {
   --color-1: peru;
+  --color-1-inverted: red;
   --color-2: #242424;
   --color-3: whitesmoke;
   --color-4: #121212;
@@ -65,7 +67,6 @@ html {
   font-family: "OrticaBold", Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
   text-rendering: optimizeLegibility;
   /* line-height: 1.5; */
-  text-decoration-style: dotted;
 }
 
 /*__ Global > Text Formatting __*/
@@ -135,8 +136,12 @@ article a {
 
 /*__ Global > Index __*/
 
+footer a {
+  color: var(--is-color-2);
+}
+
 footer a:hover {
-  color: var(--color-1);
+  color: var(--color-1-inverted);
   text-decoration: none;
 }
 
@@ -244,11 +249,16 @@ main.reveal a {
 #lottieContainer {
   position: fixed;
   top: 0;
-  height: auto;
+  height: 100vh;
   width: 100vw;
-  margin: auto;
   z-index: 2;
   pointer-events: none;
+}
+
+#lottieContainer svg {
+  min-height: 100vw;
+  min-width: 100vh;
+  width: auto !important;
 }
 
 .bottom-4 {
@@ -270,13 +280,13 @@ main.reveal a {
 /*__ Grid System __*/
 
 .container {
-  width: 90%
+  width: 90%;
 }
 
 .row {
   position: relative;
   width: 100%;
-  margin-bottom: 4rem;
+  /* margin-bottom: 4rem; */
 }
 
 .row [class^=col] {
@@ -427,14 +437,14 @@ main.reveal a {
 
 /*__ Main __*/
 
-footer:before {
+/* footer:before {
   content: '';
   display: block;
   height: 1px;
   background-color: black;
   opacity: .1;
   margin: 4rem 0;
-}
+} */
 
 /*__ Main > Cards __*/
 
@@ -443,7 +453,7 @@ footer:before {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(calc(200px + 10%), 1fr));
   gap: .75rem;
-  padding-bottom: 1rem;
+  padding: 6rem 0;
 }
 
 .card {
@@ -541,8 +551,9 @@ main#index header {
   z-index: 1;
   width: 100%;
   height: 100%;
+  position: relative;
   pointer-events: none;
-  margin-bottom: 7.5rem;
+  /* margin-bottom: 10rem; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -554,6 +565,20 @@ main#index header {
           justify-content: center;
 }
 
+/* main#index header:after {
+  background: inherit;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 50%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  transform: skewY(2.5deg);
+  transform-origin: 0;
+  z-index: -1;
+} */
+
 #titlone {
   font-size: 5rem;
   display: inline-block;
@@ -561,10 +586,10 @@ main#index header {
 }
 
 /*Lottie custom color*/
-/* g * {
-  fill: var(--color-1);
-  stroke: var(--color-1);
-} */
+header g * {
+  fill: var(--color-2);
+  stroke: var(--color-2);
+}
 
 /* main#index > * {
   -webkit-animation: fade 1.5s ease 1 forwards;
@@ -822,6 +847,7 @@ section.present.on-top {
 
 #back-to-home {
   font-family: "sans-serif";
+  color: peru;
   display: inline-block;
   z-index: 1000;
   pointer-events: all;
@@ -872,7 +898,7 @@ section.present.on-top {
           justify-content: center;
 }
 
-.slides > section img, video, iframe {
+.slides > section img, video {
   -o-object-fit: contain;
      object-fit: contain;
   height: auto;
@@ -880,8 +906,13 @@ section.present.on-top {
   max-width: 100%;
 }
 
-.slides > section .media-wrap, img, iframe {
+.slides > section .media-wrap, img {
   max-width: 1920px;
+}
+
+.slides > section iframe {
+  width: calc(var(--view-mode) * calc(16 / 9));
+  height: var(--view-mode);
 }
 
 .swup-transition-overlay {
@@ -1038,4 +1069,33 @@ section.on-top:first-of-type {
 .swing {
   transform-origin: center;
   animation: swing 1s infinite forwards;
+}
+
+
+
+
+main#index footer {
+  position: relative;
+  background: var(--color-3);
+  padding: 9rem 0 6rem 0;
+  clip-path: polygon(0% 0%, 100% 3rem, 100% 100%, 0% 100%);
+}
+
+
+#works {
+  position: relative;
+  background: var(--color-3);
+  padding: 6rem 0;
+  clip-path: polygon(0% 0%, 100% 3rem, 100% 100%, 0% calc(100% - 3rem));
+}
+
+main#index header {
+  position: relative;
+  background: var(--color-3);
+  padding-bottom: 6rem;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% calc(100% - 3rem));
+}
+
+.is-spaced {
+  padding: 7.5rem 0;
 }

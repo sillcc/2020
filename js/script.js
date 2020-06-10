@@ -14,7 +14,7 @@ bodymovin.loadAnimation({
   animType: 'svg',
   autoplay: true,
   loop: false,
-  path: 'https://assets9.lottiefiles.com/packages/lf20_G5TBf4.json',
+  path: 'assets/brodie.json',
 });
 
 // https://lottiefiles.com/18364-celebaration
@@ -40,7 +40,7 @@ var anim = bodymovin.loadAnimation({
   animType: 'svg',
   autoplay: false,
   loop: false,
-  path: 'assets/confetti.json',
+  path: 'assets/confetti3.json',
   // path: 'https://assets2.lottiefiles.com/packages/lf20_94B4Hs.json'
 });
 
