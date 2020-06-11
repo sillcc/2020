@@ -13,8 +13,8 @@ bodymovin.loadAnimation({
   container: illu,
   animType: 'svg',
   autoplay: true,
-  loop: false,
-  path: 'assets/brodie.json',
+  loop: true,
+  path: 'assets/boi.json',
 });
 
 // https://lottiefiles.com/18364-celebaration
