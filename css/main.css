@@ -222,6 +222,10 @@ main.reveal a {
   white-space: nowrap;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 .is-color-1 {
   color: var(--color-1);
 }
@@ -906,7 +910,7 @@ section.present.on-top {
   height: auto;
   max-height: var(--view-mode);
   max-width: 100%;
-  border-radius: 2rem;
+  border-radius: 1rem;
 }
 
 .slides > section .media-wrap, img {
@@ -916,7 +920,7 @@ section.present.on-top {
 .slides > section iframe {
   width: calc(var(--view-mode) * calc(16 / 9));
   height: var(--view-mode);
-  border-radius: 2rem;
+  border-radius: 1rem;
 }
 
 .swup-transition-overlay {
@@ -927,17 +931,20 @@ section.present.on-top {
 /*__ Reveal > Responsive __*/
 
 @media screen and (max-width: 976px) {
-  #arrow {
-    opacity: 0;
-  }
-  #click-area {
-    cursor: initial;
-  }
   .only-desktop {
     display: none;
   }
   .only-mobile {
     display: block;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  #arrow {
+    opacity: 0;
+  }
+  #click-area {
+    cursor: initial;
   }
   #click-area a {
     cursor: initial;
@@ -1082,8 +1089,8 @@ main#index footer {
   position: relative;
   background: var(--color-3);
   padding: 9rem 0 6rem 0;
-  clip-path: polygon(0% 0%, 100% 3rem, 100% 100%, 0% 100%);
-  -webkit-clip-path: polygon(0% 0%, 100% 3rem, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 3rem, 100% calc(100% + 10px), 0% calc(100% + 10px));
+  -webkit-clip-path: polygon(0% 0%, 100% 3rem, 100% calc(100% + 10px), 0% calc(100% + 10px));
 }
 
 
@@ -1091,8 +1098,8 @@ main#index footer {
   position: relative;
   background: var(--color-3);
   padding: 6rem 0;
-  clip-path: polygon(0% 0%, 100% 3rem, 100% 100%, 0% calc(100% - 3rem));
-  -webkit-clip-path: polygon(0% 0%, 100% 3rem, 100% 100%, 0% calc(100% - 3rem));
+  clip-path: polygon(0% 3rem, 100% 0, 100% calc(100% - 3rem), 0% 100%);
+  -webkit-clip-path: polygon(0% 3rem, 100% 0, 100% calc(100% - 3rem), 0% 100%);
 }
 
 main#index header {
