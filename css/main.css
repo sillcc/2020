@@ -46,7 +46,7 @@ html {
   padding: 0;
   left: 0;
   top: 0;
-  font-size: calc(18px + .1vw);
+  font-size: calc(14px + (18 - 14) * ((100vw - 200px) / (1200 - 200)));
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   /* -webkit-transition: .5s;
