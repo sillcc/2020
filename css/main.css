@@ -13,7 +13,6 @@
 
 /*__ Root __*/
 
-
 :root {
   --view-mode: 75vh;
   --color-contrast: white;
@@ -39,6 +38,16 @@
   --view-mode: 100vh;
 }
 
+::selection {
+  color: var(--color-1);
+  background: none;
+}
+
+::-moz-selection {
+  color: var(--color-1);
+  background: none;
+}
+
 /*__ Global __*/
 
 body,
@@ -48,7 +57,7 @@ html {
   padding: 0;
   left: 0;
   top: 0;
-  font-size: calc(19px + (-2) * ((1200px - 100vw) / (1200 - 200)));
+  font-size: calc(20px + (-2) * ((1200px - 100vw) / (1200 - 200)));
   /* font-size: calc(14px + (18 - 14) * ((100vw - 200px) / (1200 - 200))); */
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -67,7 +76,7 @@ html {
 }
 
 * {
-  font-family: "OrticaBold", Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  font-family: 'OrticaBold', Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
   text-rendering: optimizeLegibility;
   line-height: 1.25;
 }
@@ -96,6 +105,12 @@ h3 {
 
 h3.col-12:first-of-type {
   padding: 0 0 2.5rem 0;
+}
+
+.✱:before {
+  content: '✱';
+  padding-right: .75rem;
+  color: var(--color-1);
 }
 
 h4 {
@@ -157,7 +172,7 @@ main.reveal body * {
 
 main.reveal * {
   color: white;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 main.reveal a {
@@ -538,6 +553,7 @@ main.reveal a {
 .card_foot {
   /* border-bottom-left-radius: 0.5rem; */
   /* border-bottom-right-radius: 0.5rem; */
+  width: 100%;
   padding: 16px 24px 24px 24px;
   opacity: 0;
   position: absolute;
@@ -546,6 +562,7 @@ main.reveal a {
 
 .card_title {
   margin-bottom: 1.25rem;
+  max-width: 90%;
   line-height: 1.15;
   color: var(--color-4);
 }
@@ -751,7 +768,7 @@ main#index:after {
 }
 
 #arrow:after {
-  content:"➺";
+  content:'➺';
   display: block;
   -webkit-transition: 300ms ease;
   -o-transition: 300ms ease;
@@ -855,7 +872,7 @@ section.present.on-top {
 }
 
 #back-to-home {
-  font-family: "sans-serif";
+  font-family: 'sans-serif';
   display: inline-block;
   z-index: 1000;
   pointer-events: all;
