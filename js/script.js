@@ -14,7 +14,7 @@ bodymovin.loadAnimation({
   animType: 'svg',
   autoplay: true,
   loop: true,
-  path: 'assets/boi.json',
+  path: 'assets/eye-1.json',
 });
 
 // https://lottiefiles.com/18364-celebaration
