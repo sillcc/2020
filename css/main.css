@@ -496,6 +496,12 @@ main.reveal a {
   /* -webkit-path: polygon(0% 2.5%, 2.5% 0%,97.5% 0%, 100% 2.5%, 100% 97.5%, 97.5% 100%, 2.5% 100%, 0% 97.5%); */
 }
 
+@media screen and (max-width: 691px) {
+  .card {
+    padding-bottom: 75%;
+  }
+}
+
 .card:hover {
   background: var(--color-1);
   /* box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1); */
@@ -612,10 +618,15 @@ main#index header {
 }
 
 /*Lottie custom color*/
-/* header g * {
-  fill: var(--color-2);
-  stroke: var(--color-2);
-} */
+header g * {
+  fill: var(--color-1);
+  stroke: var(--color-1);
+}
+
+header g:last-of-type {
+  stroke-width: 0;
+}
+
 
 /* main#index > * {
   -webkit-animation: fade 1.5s ease 1 forwards;
@@ -1072,34 +1083,25 @@ section.on-top:first-of-type {
 
 
 
-
-
-@keyframes swing {
-  20% {
-    transform: rotate3d(0, 0, 1, 15deg);
-  }
-
-  40% {
-    transform: rotate3d(0, 0, 1, -10deg);
-  }
-
-  60% {
-    transform: rotate3d(0, 0, 1, 5deg);
-  }
-
-  80% {
-    transform: rotate3d(0, 0, 1, -5deg);
-  }
-
-  to {
-    transform: rotate3d(0, 0, 1, 0deg);
-  }
+/* *[class*="col-"]:not(article), h1 {
+  transform: translateY(2rem);
+  opacity: 0;
 }
 
-.swing {
-  transform-origin: center;
-  animation: swing 1s infinite forwards;
+.an-in {
+  animation: scale-in-ver-bottom  0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
+
+@keyframes scale-in-ver-bottom {
+  0% {
+    transform: translateY(4rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+} */
 
 
 
