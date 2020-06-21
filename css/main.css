@@ -498,11 +498,11 @@ main.reveal a {
   /* -webkit-path: polygon(0% 2.5%, 2.5% 0%,97.5% 0%, 100% 2.5%, 100% 97.5%, 97.5% 100%, 2.5% 100%, 0% 97.5%); */
 }
 
-@media screen and (max-width: 691px) {
+/* @media screen and (max-width: 691px) {
   .card {
     padding-bottom: 85%;
   }
-}
+} */
 
 .card:hover {
   background: var(--color-1);
