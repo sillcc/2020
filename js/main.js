@@ -85,10 +85,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     Reveal.addEventListener('ready', function () {
-      Reveal.slide(-1, -1, -1);
+      if ((Reveal.getProgress() === 0) || (Reveal.getProgress() === 1)) { 
+        Reveal.slide(-1, -1, -1);
+      }
+      Reveal.sync();
       // let state = Reveal.getState();
       // Reveal.setState(state);
-      Reveal.sync();
       document.querySelector('#slideshow-container').querySelectorAll('#slideshow-container > *:not(.slides):not(.pause-overlay)').forEach(n => n.remove());
 
       var els = document.querySelectorAll('.project-dida-container > *');
