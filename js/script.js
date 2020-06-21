@@ -2,12 +2,12 @@ function toggleDarkMode() {
   document.documentElement.classList.toggle('dark-mode');
 };
 
-// var clock = new Date().getHours();
-// if (clock >= 7 && clock <= 19) {
-//   document.documentElement.classList.remove('dark-mode');
-// } else {
-//   document.documentElement.classList.add('dark-mode');
-// }
+var clock = new Date().getHours();
+if (clock >= 7 && clock <= 19) {
+  document.documentElement.classList.remove('dark-mode');
+} else {
+  document.documentElement.classList.add('dark-mode');
+}
 
 bodymovin.loadAnimation({
   container: illu,
