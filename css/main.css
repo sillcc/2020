@@ -150,6 +150,10 @@ article a {
 
 /*__ Global > Index __*/
 
+footer {
+  color: whitesmoke;
+}
+
 footer a {
   color: var(--is-color-2);
 }
