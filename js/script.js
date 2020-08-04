@@ -31,9 +31,3 @@ var anim = bodymovin.loadAnimation({
 function yeeah() {
   anim.goToAndPlay(0);
 };
-
-// inView.offset(100);
-// inView('*[class*="col-"]:not(article), h1')
-//   .on('enter', el => {
-//     el.classList.add('an-in');
-//   });
