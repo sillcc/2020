@@ -422,6 +422,10 @@ main.index {
   height: 100%;
 }
 
+main.index * {
+  font-family: 'Maison', 'HKGrotesk', sans-serif;
+}
+
 main.index p {
   padding: 3.5vw 10vw 1.5vw 10vw;
 }
@@ -449,7 +453,7 @@ main.index header > * {
   padding: 2vw;
 }
 
-main.index header > i {
+main.index header > p:nth-of-type(2) {
   padding: 0 2vw;
   text-align: center;
   padding: 0 10vw;
@@ -494,11 +498,12 @@ main.index a {
   justify-content: center;
   z-index: +10;
   pointer-events: none;
-  animation: spinnerBg 1000ms steps(1) forwards;
+  background-color: var(--color-2);
+  animation: spinnerBg 2750ms forwards var(--easing);
 }
 
 .spinner * {
-  animation: spinner 1000ms forwards var(--easing);
+  animation: spinner 2750ms forwards var(--easing);
   opacity: 0;
 }
 
