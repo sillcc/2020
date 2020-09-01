@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My custom Bulma website</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/la-var.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <script type="text/javascript" src="lib/main.js"></script>
+  <script type="text/javascript" src="lib/index.js"></script>
+  <script type="text/javascript" src="lib/clipboard-customization.min.js"></script>
+  <script type="text/javascript" src="lib/clipboard-custom.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <!-- <link rel="stylesheet" href="css/debug.css"> -->
+</head>
+
+<body>
+  <!-- Tooltip-->
+  <div id="tooltip" class="hide">
+    <div id="tooltip_bg" class="notification has-text-centered has-background-success">
+      <strong id="tooltip_text">Icon has been copied! 👌</strong>
+    </div>
+  </div>
+  <div id="bg" style="position:fixed; height: 100vh; width: 100vw; z-index: -10;"></div>
+  <!--icon Grid -->
+  <section id="icon-list">
+    <section class="hero is-fullheight">
+      <div class="hero-head">
+        <nav class="navbar is-transparent is-spaced">
+          <div class="navbar-brand">
+            <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+          <div class="navbar-menu" id="navMenu">
+            <div class="navbar-start has-text-black">
+              <a class="navbar-item is-active">
+                Home
+              </a>
+              <a class="navbar-item">
+                Documentation
+              </a>
+              <a class="navbar-item">
+                Use Cases
+              </a>
+              <a class="navbar-item">
+                Known Bugs
+              </a>
+              <div class="navbar-item is-hidden-desktop">
+                <div class="level is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <strong>Stay!</strong>
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">
+                      <a class="button is-dark">
+                        <span class="icon">
+                          <i class="fab fa-github"></i>
+                        </span>
+                        <span>Github</span>
+                      </a>
+                    </div>
+                    <div class="level-item">
+                      <a class="button is-primary">
+                        <span class="icon">
+                          <i class="la la-3x la-download play-once" style="font-size: 1.5rem;"></i>
+                        </span>
+                        <span>Download</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="navbar-end is-hidden-touch">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Github</span>
+                </a>
+                <a class="button is-primary">
+                  <span class="icon">
+                    <i class="la la-3x la-download play-once" style="font-size: 1.5rem;"></i>
+                  </span>
+                  <span>Download</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="hero-body" style="display: felx; flex-direction: column; min-height: 80vh;">
+        <div class="container has-text-centered" style="display: inherit; flex-direction: inherit;">
+          <i id="main-icon" class="la la-diamond play-in-loop-now is-hidden-desktop has-text-grey-lightest" style="flex-grow: 0; align-self: center; font-size: 5rem; color:#dbdbdb"></i>
+          <div style="flex-grow: 1;"></div>
+          <p class="keep-unite" style="flex-grow: 1;">
+            <span class="title is-1 is-family-sans-serif has-text-grey-darker">{</span>
+            <span class="title is-1 is-family-sans-serif has-text-grey-lightest">.la</span>
+            <span class="title is-1 custom-header has-text-primary">.var</span>
+            <span class="title is-1 is-family-sans-serif has-text-grey-darker">}</span>
+            <!--<strong class="is-4 has-text-info is-mono">&nbsp;v1.0</strong>-->
+          </p>
+          <p class="subtitle is-4 has-text-grey-lighter" style="flex-grow: 1; margin: 0">
+            <span class="is-hidden-mobile">Another way to import icon animations.<br></span>
+            Just a line of code. <br class="is-hidden-tablet">As always.<br>
+          </p>
+          <div class="field has-addons" style="flex-grow: 0;">
+            <div class="control has-icons-left">
+              <input id="search-bar" class="input search is-medium has-background-searchbar-color has-text-light" type="text"
+                placeholder="Search" style="border-color: transparent;">
+                <span class="icon is-left">
+                  <i class="fa fa-search"></i>
+                </span>
+            </div>
+            <div class="control">
+              <button id="btn_copy_icon" class="button is-medium is-searchbar-color"><span class="is-hidden-mobile">icons</span><span
+                  class="is-hidden-tablet">I</span></button>
+            </div>
+            <div class="control">
+              <button id="btn_copy_html" class="button is-medium is-searchbar-color"><span
+                  class="is-hidden-mobile">classes</span><span class="is-hidden-tablet">C</span></button>
+            </div>
+            <div class="control">
+              <button id="btn_copy_unicode" class="button is-medium is-searchbar-color"><span
+                  class="is-hidden-mobile">unicodes</span><span class="is-hidden-tablet">U</span></button>
+            </div>
+          </div>
+          <p class="buttons is-centered is-hidden">
+            <br>
+            <button class="button is-medium is-white-ter">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>Get started</span>
+            </button>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section has-background-black-ter is-bordered" style="margin-top: -4.5rem; padding: 8rem 1.5rem 6.5rem 1.5rem;">
+      <div class="container">
+        <div id="alert_no_vf_support" class="notification is-danger is-hidden"
+          style="margin-top: -3rem; margin-bottom: 3rem;">
+          <button class="delete"></button>
+          Uh, oh, seems that <strong>your browser doesn't support Variable Fonts</strong> 😢 😢 😢 Of course, you can go
+          on browsing like you normally do but it won't be as awesome as if the animations would work. Be sure to return
+          back on a browser that supports var settings to enjoy the full experience 👋
+        </div>
+        <div class="list tile is-ancestor is-flex-mobile" style="flex-wrap: wrap;">
+          <!-- Categories-->
+          <div class="tile x2 is-parent is-vertical">
+            <h3 class="title is-3 is-family-sans-serif">Audio<br>& Video</h3>
+            <p class="tag is-hidden"><data hidden>1</data></p>
+          </div>
+          <!-- Line Breaks>-->
+          <!--<div class="tile break">
+            <p class="tag"><data hidden>1</data></figcaption>
+          </div>-->
+          <!--icons -->
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-film" unicode-data="F008">
+              <i class="la la-3x la-film play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">film</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-check" unicode-data="F00C">
+              <i class="la la-3x la-check play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">check</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-search-plus" unicode-data="F00E">
+              <i class="la la-3x la-search-plus play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">search-plus</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-signal" unicode-data="F012">
+              <i class="la la-3x la-signal play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">signal</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-cog" unicode-data="F013">
+              <i class="la la-3x la-cog play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">cog</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-download" unicode-data="F019">
+              <i class="la la-3x la-download play-once"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">download</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-sync" unicode-data="F021">
+              <i class="la la-3x la-sync play-once"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">sync</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-flag" unicode-data="F024">
+              <i class="la la-3x la-flag play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">flag</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-tag" unicode-data="F02B">
+              <i class="la la-3x la-tag play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">tag</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-bookmark" unicode-data="F02E">
+              <i class="la la-3x la-bookmark play-once"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">bookmark</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-print" unicode-data="F02F">
+              <i class="la la-3x la-print play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">print</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-camera" unicode-data="F030">
+              <i class="la la-3x la-camera play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">camera</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-align-center" unicode-data="F037">
+              <i class="la la-3x la-align-center play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">align-center</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-indent" unicode-data="F03C">
+              <i class="la la-3x la-indent play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">indent</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-video" unicode-data="F03D">
+              <i class="la la-3x la-video play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">video</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-image" unicode-data="F03E">
+              <i class="la la-3x la-image play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">image</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-adjust" unicode-data="F042">
+              <i class="la la-3x la-adjust play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">adjust</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-play" unicode-data="F042">
+              <i class="la la-3x la-play play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">play</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-forward" unicode-data="F04E">
+              <i class="la la-3x la-forward play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">forward</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-expand" unicode-data="F065">
+              <i class="la la-3x la-expand play-then-release"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">expand</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-compress" unicode-data="F066">
+              <i class="la la-3x la-compress play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">compress</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-plus" unicode-data="F067">
+              <i class="la la-3x la-plus play-then-release"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">plus</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-warning" unicode-data="F071">
+              <i class="la la-3x la-warning play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">warning</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-random" unicode-data="F074">
+              <i class="la la-3x la-random play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">random</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-comment" unicode-data="F075">
+              <i class="la la-3x la-comment play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">comment</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-magnet" unicode-data="F076">
+              <i class="la la-3x la-magnet play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">magnet</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-retweet" unicode-data="F079">
+              <i class="la la-3x la-retweet play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">retweet</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-unlock" unicode-data="F09C">
+              <i class="la la-3x la-unlock play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">unlock</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-hand-o-down" unicode-data="F0A7">
+              <i class="la la-3x la-hand-o-down play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">hand-o-down</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-wrench" unicode-data="F0AD">
+              <i class="la la-3x la-wrench play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">wrench</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-tasks" unicode-data="F0AE">
+              <i class="la la-3x la-tasks play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">tasks</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-chain" unicode-data="F0C1">
+              <i class="la la-3x la-chain play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">chain</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-scissors" unicode-data="F0C4">
+              <i class="la la-3x la-scissors play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">scissors</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-navicon" unicode-data="F0C9">
+              <i class="la la-3x la-navicon play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">navicon</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-unsorted" unicode-data="F0DC">
+              <i class="la la-3x la-unsorted play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">unsorted</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-envelope" unicode-data="F0E0">
+              <i class="la la-3x la-envelope play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">envelope</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-legal" unicode-data="F0E3">
+              <i class="la la-3x la-legal play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">legal</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-paste" unicode-data="F0EA">
+              <i class="la la-3x la-paste play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">paste</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-lightbulb" unicode-data="F0EB">
+              <i class="la la-3x la-lightbulb play-then-release"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">lightbulb</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-bell" unicode-data="F0F3">
+              <i class="la la-3x la-bell play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">bell</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-angle-up" unicode-data="F106">
+              <i class="la la-3x la-angle-up play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">angle-up</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-mobile" unicode-data="F10B">
+              <i class="la la-3x la-mobile play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">mobile</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-spinner" unicode-data="F110">
+              <i class="la la-3x la-spinner play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">spinner</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-frown" unicode-data="F119">
+              <i class="la la-3x la-frown play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">frown</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-flag-checkered" unicode-data="F11E">
+              <i class="la la-3x la-flag-checkered play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">flag-checkered</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-terminal" unicode-data="F120">
+              <i class="la la-3x la-terminal play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">terminal</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-code" unicode-data="F121">
+              <i class="la la-3x la-code play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">code</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-eraser" unicode-data="F12D">
+              <i class="la la-3x la-eraser play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">eraser</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-ellipsis-h" unicode-data="F141">
+              <i class="la la-3x la-ellipsis-h play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">ellipsis-h</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-check-square" unicode-data="F14A">
+              <i class="la la-3x la-check-square play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">check-square</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-sort-alpha-asc" unicode-data="F15D">
+              <i class="la la-3x la-sort-alpha-asc play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">sort-alpha-asc</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-sort-amount-asc" unicode-data="F160">
+              <i class="la la-3x la-sort-amount-asc play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">sort-amount-asc</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-thumbs-o-up" unicode-data="F164">
+              <i class="la la-3x la-thumbs-o-up play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">thubs-up</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-sun" unicode-data="F185">
+              <i class="la la-3x la-sun play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">sun</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-mortar-board" unicode-data="F19D">
+              <i class="la la-3x la-mortar-board play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">mortar-board</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-automobile" unicode-data="F1B9">
+              <i class="la la-3x la-automobile play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">automobile</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-send" unicode-data="F1D8">
+              <i class="la la-3x la-send play-once"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">send</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-sliders" unicode-data="F1DE">
+              <i class="la la-3x la-sliders play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">sliders</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-plug" unicode-data="F1E6">
+              <i class="la la-3x la-plug play-then-release"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">plug</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-wifi" unicode-data="F1EB">
+              <i class="la la-3x la-wifi play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">wifi</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="eye-dropper" unicode-data="F1FB">
+              <i class="la la-3x la-eye-dropper play-then-release"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">eye-dropper</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-toggle-off" unicode-data="F204">
+              <i class="la la-3x la-toggle-off play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">toggle-off</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-cc" unicode-data="F20A">
+              <i class="la la-3x la-cc play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">cc</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-cart-plus" unicode-data="F217">
+              <i class="la la-3x la-cart-plus play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">cart-plus</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-cart-arrow-down" unicode-data="F218">
+              <i class="la la-3x la-cart-arrow-down play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">cart-arrow-down</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-server" unicode-data="F233">
+              <i class="la la-3x la-server play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">server</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-battery" unicode-data="F240">
+              <i class="la la-3x la-battery play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">battery</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-battery-0" unicode-data="F244">
+              <i class="la la-3x la-battery-0 play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">battery</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-sticky-note" unicode-data="F249">
+              <i class="la la-3x la-sticky-note play-then-release"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">sticky-note</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-balance-scale" unicode-data="F24E">
+              <i class="la la-3x la-balance-scale play-then-release"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">balance-scale</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-hourglass-1" unicode-data="F251">
+              <i class="la la-3x la-hourglass-1 play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">hourglass</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-hand-spock" unicode-data="F259">
+              <i class="la la-3x la-hand-spock play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">hand-spock</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-hand-pointer" unicode-data="F25A">
+              <i class="la la-3x la-hand-pointer play-once"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">hand-pointer</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-map-signs" unicode-data="F277">
+              <i class="la la-3x la-map-signs play-once"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">map-signs</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-braille" unicode-data="F2A1">
+              <i class="la la-3x la-braille play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">braille</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-assistive-listening-systems"
+              unicode-data="F2A2">
+              <i class="la la-3x la-assistive-listening-systems play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">assistive-listening</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-trash" unicode-data="F2ED">
+              <i class="la la-3x la-trash play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">trash</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-stopwatch" unicode-data="F2F2">
+              <i class="la la-3x la-stopwatch play-once"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">stopwatch</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-sign-out" unicode-data="F2F5">
+              <i class="la la-3x la-sign-out play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">sign-out</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-sign-in" unicode-data="F2F6">
+              <i class="la la-3x la-sign-in play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">sign-in</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-images" unicode-data="F302">
+              <i class="la la-3x la-images play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">images</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-pen-alt" unicode-data="F305">
+              <i class="la la-3x la-pen-alt play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">pen-alt</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-external-link" unicode-data="F35D">
+              <i class="la la-3x la-external-link play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">external-link</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-diamond" unicode-data="F3A5">
+              <i class="la la-3x la-diamond play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">diamond</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-microphone-alt" unicode-data="F3C9">
+              <i class="la la-3x la-microphone-alt play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">microphone-alt</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-reply" unicode-data="F3E5">
+              <i class="la la-3x la-reply play-then-release"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">reply</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="shipping-fast" unicode-data="F48B">
+              <i class="la la-3x la-shipping-fast play-then-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">shipping-fast</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-smoking" unicode-data="F48D">
+              <i class="la la-3x la-smoking play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">smoking</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-syringe" unicode-data="F48E">
+              <i class="la la-3x la-syringe play-then-release"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">syringe</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-commenting" unicode-data="F48E">
+              <i class="la la-3x la-commenting play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">commenting</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-comment-slash" unicode-data="F4B3">
+              <i class="la la-3x la-comment-slash play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">comment-slash</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-route" unicode-data="F4D7">
+              <i class="la la-3x la-route play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">route</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-sign" unicode-data="F4D9">
+              <i class="la la-3x la-sign play-once"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">sign</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-door-closed" unicode-data="F52A">
+              <i class="la la-3x la-door-closed play-once"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">door-closed</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-greater-than-equal" unicode-data="F532">
+              <i class="la la-3x la-greater-than-equal play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">greater-than-equal</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-helicopter" unicode-data="F533">
+              <i class="la la-3x la-helicopter play-once"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">helicopter</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-money-bill-wave-alt" unicode-data="F53B">
+              <i class="la la-3x la-money-bill-wave-alt play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">money-bill-wave-alt</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-receipt" unicode-data="F543">
+              <i class="la la-3x la-receipt play-once"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">receipt</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-robot" unicode-data="F544">
+              <i class="la la-3x la-robot play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">robot</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-stream" unicode-data="F550">
+              <i class="la la-3x la-stream play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">stream</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-backspace" unicode-data="F55A">
+              <i class="la la-3x la-backspace play-once"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">backspace</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-concierge-bell" unicode-data="F562">
+              <i class="la la-3x la-concierge-bell play-once"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">concierge-bell</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-crop-alt" unicode-data="F565">
+              <i class="la la-3x la-crop-alt play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">crop-alt</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-drafting-compass" unicode-data="F568">
+              <i class="la la-3x la-drafting-compass play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">drafting-compass</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-feather-alt" unicode-data="F568">
+              <i class="la la-3x la-feather-alt play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">feather-alt</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-grip-horizontal" unicode-data="F568">
+              <i class="la la-3x la-grip-horizontal play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">grip-horizontal</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-map-marked-alt" unicode-data="F568">
+              <i class="la la-3x la-map-marked-alt play-in-loop"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">map-marked-alt</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-pencil-ruler" unicode-data="F5AE">
+              <i class="la la-3x la-pencil-ruler play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">pencil-ruler</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-star-half-alt" unicode-data="F5C0">
+              <i class="la la-3x la-star-half-alt play-then-mirror"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">star-half-alt</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-swatchbook" unicode-data="F5C3">
+              <i class="la la-3x la-swatchbook play-once"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">swatchbook</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-fist-raised" unicode-data="F6DE">
+              <i class="la la-3x la-fist-raised play-then-release"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">fist-raised</figcaption>
+          </div>
+          <div class="tile x1 is-parent is-vertical">
+            <button class="square button is-primary" icon-data="" html-data="la-scroll" unicode-data="F70E">
+              <i class="la la-3x la-scroll play-then-release"></i>
+            </button>
+            <figcaption class="tag is-dark has-text-grey is-hidden-mobile">scroll</figcaption>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  <!-- Hero 2-->
+  <section  class="hero">
+    <div class="has-background-grey-darker" style="width: 100%; height: 2rem;">
+      <div class="buttons is-centered" style="transform: translateY(-2rem);">
+        <button id="start-all" class="button is-danger has-text-white-ter" style="border-radius: 50%; width: 4rem; height: 4rem;">
+          <i class="la la-2x la-play play-then-mirror"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        A project by <a href="https://www.silviu.xyz">Silviu Chiriac</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>

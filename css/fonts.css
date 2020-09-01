@@ -1,0 +1,29 @@
+/*__ HK Grotesk __*/
+
+
+@font-face {
+  font-family: 'HKGrotesk';
+      src: url('fonts/HKGrotesk/HKGrotesk-Bold.eot') format('eot'),
+      url('fonts/HKGrotesk/HKGrotesk-Bold.woff') format('woff'),
+      url('fonts/HKGrotesk/HKGrotesk-Bold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'HKGrotesk';
+      src: url('fonts/HKGrotesk/HKGrotesk-BoldItalic.eot') format('eot'),
+      url('fonts/HKGrotesk/HKGrotesk-BoldItalic.woff') format('woff'),
+      url('fonts/HKGrotesk/HKGrotesk-BoldItalic.woff2') format('woff2');
+  font-style: italic;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'HKGrotesk';
+      src: url('fonts/HKGrotesk/HKGrotesk-Black.eot') format('eot'),
+      url('fonts/HKGrotesk/HKGrotesk-Black.woff') format('woff'),
+      url('fonts/HKGrotesk/HKGrotesk-Black.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 900;
+}
