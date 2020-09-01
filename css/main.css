@@ -504,7 +504,7 @@ main.index a {
 
 @keyframes spinnerBg {
   from {
-    background-color: red;
+    background-color: var(--color-2);
   } to {
     background-color: transparent;
   }
