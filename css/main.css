@@ -724,8 +724,8 @@ main.index a {
 
 @keyframes holeIn {
   from {
-    width: 0.01vmax;
-    height: 0.01vmax;
+    width: 0.001vmax;
+    height: 0.001vmax;
   } to {
     width: 500vmax;
     height: 500vmax;
@@ -737,8 +737,8 @@ main.index a {
     width: 500vmax;
     height: 500vmax;
   } to {
-    width: 0vmax;
-    height: 0vmax;
+    width: 0.001vmax;
+    height: 0.001vmax;
   }
 }
 
@@ -747,8 +747,8 @@ main.index a {
     width: 500vmax;
     height: 500vmax;
   } to {
-    width: 0vmax;
-    height: 0vmax;
+    width: 0.001vmax;
+    height: 0.001vmax;
   }
 }
 
