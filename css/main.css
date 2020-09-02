@@ -422,7 +422,7 @@ main.index {
   height: 100%;
 }
 
-main.index * {
+main.index *:not(small) {
   font-family: 'Maison', 'HKGrotesk', sans-serif;
 }
 
@@ -432,7 +432,7 @@ main.index p {
 
 main.index header {
   position: absolute;
-  height: calc(100% + 10vw);
+  height: calc(100% + 25vw);
   top: 0;
   right: 0;
   bottom: 0;
@@ -442,9 +442,8 @@ main.index header {
   justify-content: space-between;
   pointer-events: none;
   overflow: hidden;
-  padding-bottom: 10vw;
-  /* background-color: var(--color-2); */
-  /* z-index: +3; */
+  padding-bottom: 25vw;
+  background-color: var(--color-2);
 }
 
 main.index header > * {
@@ -502,17 +501,17 @@ main.index a {
 }
 
 .spinner * {
-  color: var(--color-2);
+  color: #f40000;
   animation: spinner 1750ms forwards var(--easing);
   opacity: 0;
 }
 
 @keyframes spinnerBg {
   0% {
-    background-color: #f40000;
+    background-color: white;
   }
   50% {
-    background-color: #f40000;
+    background-color: white;
   }
   100% {
     background-color: transparent;
