@@ -8,6 +8,7 @@
       url('fonts/HKGrotesk/HKGrotesk-Bold.woff2') format('woff2');
   font-style: normal;
   font-weight: bold;
+  font-display: swap;
 }
 
 /* @font-face {
@@ -17,6 +18,7 @@
       url('fonts/HKGrotesk/HKGrotesk-BoldItalic.woff2') format('woff2');
   font-style: italic;
   font-weight: bold;
+  font-display: swap;
 } */
 
 @font-face {
@@ -26,6 +28,7 @@
       url('fonts/HKGrotesk/HKGrotesk-Black.woff2') format('woff2');
   font-style: normal;
   font-weight: 900;
+  font-display: swap;
 }
 
 @font-face {
@@ -34,5 +37,6 @@
 		url('fonts/Maison/Maison-Bold.woff') format('woff'),
 		url('fonts/Maison/Maison-Bold.ttf') format('truetype');
 	font-weight: bold;
-	font-style: normal;
+  font-style: normal;
+  font-display: swap;
 }

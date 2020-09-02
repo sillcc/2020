@@ -22,6 +22,19 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/main.css">
 
+  <script>
+    function defer() {
+      var imgDefer = document.querySelectorAll('div[data-src]');
+      var style = "background-image: url({url})";
+      for (var i = 0; i < imgDefer.length; i++) {
+        imgDefer[i].setAttribute('style', style.replace("{url}", imgDefer[i].getAttribute('data-src')));
+      }
+    }
+    window.onload = defer;
+  </script>
+  <script src="js/paper_core.min.js"></script>
+  <script src="js/index.js"></script>
+
 </head>
 
 <body>
@@ -31,7 +44,7 @@
       <source src="assets/sfx/ping.ogg" type="audio/ogg">
       <source src="assets/sfx/ping.mp3" type="audio/mp3">
     </audio>
-    <div class="spinner"><span>∞</span></div>
+    <div class="spinner"><span>✱</span></div>
     <div id="mask">
       <div id="hole"></div>
     </div>
@@ -64,47 +77,47 @@
         <div id="grid-for-cards" class="is-spaced">
           <a href="lab/line_awesome/index" class="★">
             <article class="card">
-              <div class="card_img" style="background-image: url('assets/covers/la.var.jpg');"></div>
+              <div class="card_img" data-src="assets/covers/la.var.jpg"></div>
             </article>
           </a>
           <a href="https://gitpull.it/project/profile/2/">
             <article class="card">
-              <div class="card_img" style="background-image: url('assets/covers/bus.to.jpg');"></div>
+              <div class="card_img" data-src="assets/covers/bus.to.jpg"></div>
             </article>
           </a>
           <a href="javascript:delay('works/various#/12')" onclick="startTransition()" class="★">
             <article class="card">
-              <div class="card_img" style="background-image: url('assets/covers/madama.jpg');"></div>
+              <div class="card_img" data-src="assets/covers/madama.jpg"></div>
             </article>
           </a>
           <a href="javascript:delay('works/reverso')" onclick="startTransition()" class="★">
             <article class="card">
-              <div class="card_img" style="background-image: url('assets/covers/reverso.gif');"></div>
+              <div class="card_img" data-src="assets/covers/reverso.gif"></div>
             </article>
           </a>
           <a href="javascript:delay('works/self')" onclick="startTransition()">
             <article class="card">
-              <div class="card_img" style="background-image: url('assets/covers/self.jpg');"></div>
+              <div class="card_img" data-src="assets/covers/self.jpg"></div>
             </article>
           </a>
           <a href="javascript:delay('works/standout')" onclick="startTransition()" class="★">
             <article class="card">
-              <div class="card_img" style="background-image: url('assets/covers/standout.jpg');"></div>
+              <div class="card_img" data-src="assets/covers/standout.jpg"></div>
             </article>
           </a>
           <a href="javascript:delay('works/internesque')" onclick="startTransition()">
             <article class="card">
-              <div class="card_img" style="background-image: url('assets/covers/internesque.jpg');"></div>
+              <div class="card_img" data-src="assets/covers/internesque.jpg"></div>
             </article>
           </a>
           <a href="javascript:delay('works/ibm')" onclick="startTransition()">
             <article class="card">
-              <div class="card_img" style="background-image: url('assets/covers/ibm.jpg');"></div>
+              <div class="card_img" data-src="assets/covers/ibm.jpg"></div>
             </article> 
           </a>
           <a href="javascript:delay('works/others')" onclick="startTransition()">
             <article class="card">
-              <div class="card_img" style="background-image: url('assets/covers/others.jpg');"></div>
+              <div class="card_img" data-src="assets/covers/others.jpg"></div>
             </article> 
           </a>
         </div>
@@ -112,7 +125,7 @@
       <div class="is-spaced">
         <p>
           <small>Art Direction</small><br>
-          Development of compelling digital narratives under rigid time and budget constraints.<br>
+          Development of compelling digital narratives under rigid time or budget constraints.<br>
         </p>
         <p>
           <small>Front-end</small><br>
@@ -154,13 +167,11 @@
     </footer>
 
   </main>
-
-  <script src="js/paper_core.min.js"></script>
-  <script src="js/index.js"></script>
+  
   <script defer src="js/pageclip.js"></script>
-  <script defer src="js/reveal.min.js"></script>
+  <!-- <script defer src="js/reveal.min.js"></script>
   <script defer src="js/swup.min.js"></script>
-  <script defer src="js/swup_preload_plugin.min.js"></script>
+  <script defer src="js/swup_preload_plugin.min.js"></script> -->
 
 </body>
 

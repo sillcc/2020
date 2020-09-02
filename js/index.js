@@ -3,7 +3,7 @@
 /* ====================== *
  *  0. Initiate Canvas    *
  * ====================== */
-//paper.install(window);
+paper.install(window);
 setTimeout(function(){
   with (paper) {
     paper.setup(document.getElementById("canvas"));
@@ -12,18 +12,18 @@ setTimeout(function(){
     *  1. Test Shape         *
     * ====================== */
 
-    var interval = 15;
-    var size = view.size.width + view.size.height;
+    var interval = 10;
+    var size = ((view.size.height / 2) + (view.size.width / 2)) / 2;
     var circleGroup = new Group();
 
     for (var i = 1; i < interval; i++) {
       var circle = new Path.Circle({
         // radius:  (i * (i / 10)) * size,
-        radius: (((size * 0.8) / interval) * i) - (size * 0.1),
+        radius: (size / interval) * (i * 3),
         // position: new Point(0,  view.size.height * 2),
         position: view.center,
         strokeColor: '#f40000',
-        strokeWidth:(size / interval) * 0.02,
+        strokeWidth: size * 0.005,
         parent: circleGroup,
       });
     };
@@ -62,13 +62,13 @@ setTimeout(function(){
       for (var i = 0; i < children.length; i++) {
         var item = children[i];
         var first = children[1];
-        deltaX = (mousePointX - item.position.x) / (i);
-        deltaY = (mousePointY - item.position.y) / (i);
+        deltaX = (mousePointX - item.position.x) / (i + 2);
+        deltaY = (mousePointY - item.position.y) / (i + 2);
 
         item.position.x += deltaX;
         item.position.y += deltaY;
 
-        first.opacity = 0;
+        // first.opacity = 0;
       }
     };
   }
@@ -102,19 +102,6 @@ asterix.addEventListener('click', function(e) {
     ripple.remove()
   },500);
 })
-
-// function ahah() {
-
-//   let x = asterix.clientWidth / 2;
-//   let y = asterix.clientHeight / 2;
-
-//   let ripple = document.createElement('span');
-//   ripple.style.left = x + 'px';
-//   ripple.style.top = y + 'px';
-//   asterix.appendChild(ripple);
-// }
-
-// ahah();
 
 /* ====================== */
 
