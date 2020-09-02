@@ -498,21 +498,21 @@ main.index a {
   justify-content: center;
   z-index: +10;
   pointer-events: none;
-  background-color: var(--color-2);
-  animation: spinnerBg 2750ms forwards ease-out;
+  animation: spinnerBg 2000ms forwards ease-out;
 }
 
 .spinner * {
-  animation: spinner 2750ms forwards var(--easing);
+  color: var(--color-2);
+  animation: spinner 1750ms forwards var(--easing);
   opacity: 0;
 }
 
 @keyframes spinnerBg {
   0% {
-    background-color: var(--color-2);
+    background-color: #f40000;
   }
   50% {
-    background-color: var(--color-2);
+    background-color: #f40000;
   }
   100% {
     background-color: transparent;
