@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /*__ Fonts __*/
 
 @import "fonts.css";
@@ -25,6 +32,12 @@
 
 :root.is-fullscreen {
   --view-mode: 100vh;
+}
+
+::-moz-selection {
+  background: #000;
+  background: rgba(0, 0, 0, .99);
+  color: #fff;
 }
 
 ::selection {
@@ -56,7 +69,8 @@ html.swup-enabled {
 /*__ Global __*/
 
 *, *:before, *:after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 * {
@@ -65,7 +79,8 @@ html.swup-enabled {
   font-size: 6vw;
   line-height: 6vw;
   font-weight: bold;
-  font-variant-ligatures: normal;
+  -webkit-font-variant-ligatures: normal;
+          font-variant-ligatures: normal;
   text-rendering: optimizeLegibility;
 }
 
@@ -80,7 +95,8 @@ body, html {
   padding: 0;
   left: 0;
   top: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* overflow-x: hidden; */
   /* transition: background-color 300ms ease-out; */
 }
@@ -126,9 +142,15 @@ main.reveal body * {
 }
 
 .reveal .slide-background {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
   display: flex !important;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .reveal .slide-background-content {
@@ -149,9 +171,15 @@ section.intro.on-top {
  position: absolute;
  height: 100vh;
  width: 100vw;
+ display: -webkit-box;
+ display: -ms-flexbox;
  display: flex;
- align-items: center;
- justify-content: center;
+ -webkit-box-align: center;
+     -ms-flex-align: center;
+         align-items: center;
+ -webkit-box-pack: center;
+     -ms-flex-pack: center;
+         justify-content: center;
 }
 
 #noscript p {
@@ -164,7 +192,10 @@ section.intro.on-top {
   width: 100%;
   height: 100%;
   z-index: +150;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 #click-area a {
@@ -192,8 +223,14 @@ section.intro.on-top {
   pointer-events: none;
   color: var(--color-contrast);
   opacity: 0.2;
+  -webkit-transition: font-size 300ms ease, -webkit-transform 300ms ease;
+  transition: font-size 300ms ease, -webkit-transform 300ms ease;
+  -o-transition: transform 300ms ease, font-size 300ms ease;
   transition: transform 300ms ease, font-size 300ms ease;
-  transform: rotate(45deg);
+  transition: transform 300ms ease, font-size 300ms ease, -webkit-transform 300ms ease;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
   font-size: 0vw;
   font-weight: bold;
 }
@@ -203,38 +240,52 @@ section.intro.on-top {
 }
 
 #prev:hover #arrow {
-  transform: rotate(-315deg) scale(-1);
+  -webkit-transform: rotate(-315deg) scale(-1);
+      -ms-transform: rotate(-315deg) scale(-1);
+          transform: rotate(-315deg) scale(-1);
 }
 
 .intro {
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .intro > * {
   padding: 2vw;
   opacity: 0;
-  transform: translateY(3vw);
+  -webkit-transform: translateY(3vw);
+      -ms-transform: translateY(3vw);
+          transform: translateY(3vw);
 }
 
 .fade-in {
   /* opacity: 1;
   transform: translateY(0); */
   /* transition: transform 600ms ease-out, opacity 300ms ease-out; */
-  animation: var(--fadeIn);
+  -webkit-animation: var(--fadeIn);
+          animation: var(--fadeIn);
 }
 
-.fade-in:nth-child(1) { animation-delay: 200ms }
-.fade-in:nth-child(2) { animation-delay: 300ms }
-.fade-in:nth-child(3) { animation-delay: 400ms }
+.fade-in:nth-child(1) { -webkit-animation-delay: 200ms; animation-delay: 200ms }
+.fade-in:nth-child(2) { -webkit-animation-delay: 300ms; animation-delay: 300ms }
+.fade-in:nth-child(3) { -webkit-animation-delay: 400ms; animation-delay: 400ms }
 
 #back-to-home {
   pointer-events: all;
 }
 
 .intro > .dida {
-  flex: auto;
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .intro > .dida * {
@@ -251,14 +302,20 @@ section.intro.on-top {
   position: absolute;
   cursor: none;
   pointer-events: all;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 50vw;
   height: 100vh;
 }
 
 .intro > .dida > a:last-of-type {
-  transform: scale(-1);
+  -webkit-transform: scale(-1);
+      -ms-transform: scale(-1);
+          transform: scale(-1);
 }
 
 .intro > .dida > a:after {
@@ -268,14 +325,23 @@ section.intro.on-top {
   width: inherit;
   height: inherit;
   margin: 0 -12.5vw;
-  transform: scale(0.02);
-  clip-path: circle();
+  -webkit-transform: scale(0.02);
+      -ms-transform: scale(0.02);
+          transform: scale(0.02);
+  -webkit-clip-path: circle();
+          clip-path: circle();
   background-color: white;
+  -webkit-transition: -webkit-transform 300ms var(--easing);
+  transition: -webkit-transform 300ms var(--easing);
+  -o-transition: transform 300ms var(--easing);
   transition: transform 300ms var(--easing);
+  transition: transform 300ms var(--easing), -webkit-transform 300ms var(--easing);
 }
 
 .intro > .dida > a:hover:after {
-  transform: scale(0.06);
+  -webkit-transform: scale(0.06);
+      -ms-transform: scale(0.06);
+          transform: scale(0.06);
 }
 
 .intro > .dida > div {
@@ -303,12 +369,17 @@ section.intro.on-top {
 /*__ Reveal > Overrides __*/
 
 .slides > section:not(.intro) {
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .slides > section img, video {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   height: auto;
   max-height: var(--view-mode);
   max-width: 100%;
@@ -378,7 +449,9 @@ section.intro.on-top {
 }
 
 .hyphens-on {
-  hyphens: auto;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 
 .has-pointer-events {
@@ -386,12 +459,18 @@ section.intro.on-top {
 }
 
 .has-bg-animated.present {
-  animation-name: bgAnimation;
-  animation-duration: 4s;
-  animation-timing-function: steps(1);
-  animation-iteration-count: infinite;
-  animation-play-state: running;
-  animation-delay: 100ms;
+  -webkit-animation-name: bgAnimation;
+          animation-name: bgAnimation;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-timing-function: steps(1);
+          animation-timing-function: steps(1);
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms;
 }
 
 .has-bg-animated.present video {
@@ -437,9 +516,16 @@ main.index header {
   right: 0;
   bottom: 0;
   left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   pointer-events: none;
   overflow: hidden;
   padding-bottom: 25vw;
@@ -448,7 +534,8 @@ main.index header {
 
 main.index header > * {
   opacity: 0;
-  animation: var(--fadeIn);
+  -webkit-animation: var(--fadeIn);
+          animation: var(--fadeIn);
   padding: 2vw;
 }
 
@@ -492,18 +579,38 @@ main.index a {
   height: 100%;
   width: 100%;
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: +10;
   pointer-events: none;
-  animation: spinnerBg 2000ms forwards ease-out;
+  -webkit-animation: spinnerBg 2000ms forwards ease-out;
+          animation: spinnerBg 2000ms forwards ease-out;
 }
 
 .spinner * {
   color: #f40000;
-  animation: spinner 1750ms forwards var(--easing);
+  -webkit-animation: spinner 1750ms forwards var(--easing);
+          animation: spinner 1750ms forwards var(--easing);
   opacity: 0;
+}
+
+@-webkit-keyframes spinnerBg {
+  0% {
+    background-color: white;
+  }
+  50% {
+    background-color: white;
+  }
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes spinnerBg {
@@ -518,17 +625,35 @@ main.index a {
   }
 }
 
-@keyframes spinner {
+@-webkit-keyframes spinner {
   0% {
     opacity: 0;
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   } 
   50% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  } 
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
   }
 }
 
@@ -538,7 +663,8 @@ main.index a {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: +1;
   pointer-events: none;
   /* mix-blend-mode: exclusion; */
@@ -549,18 +675,26 @@ main.index a {
   height: 100vh;
   width: 100vw;
   position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: +10;
   pointer-events: none;
 }
 
 #hole {
+  background: -o-radial-gradient(circle, transparent 50%, black 50%);
   background: radial-gradient(circle, transparent 50%, black 50%);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  box-shadow: 0 0 0 100vmax black;
+  -webkit-box-shadow: 0 0 0 100vmax black;
+          box-shadow: 0 0 0 100vmax black;
 }
 
 #hole {
@@ -569,11 +703,23 @@ main.index a {
 }
 
 #hole.in {
-  animation: holeIn 600ms forwards ease-in-out;
+  -webkit-animation: holeIn 600ms forwards ease-in-out;
+          animation: holeIn 600ms forwards ease-in-out;
 }
 
 #mask.on #hole {
-  animation: holeOut 600ms forwards ease-in-out;
+  -webkit-animation: holeOut 600ms forwards ease-in-out;
+          animation: holeOut 600ms forwards ease-in-out;
+}
+
+@-webkit-keyframes holeIn {
+  from {
+    width: 0.01vmax;
+    height: 0.01vmax;
+  } to {
+    width: 500vmax;
+    height: 500vmax;
+  }
 }
 
 @keyframes holeIn {
@@ -583,6 +729,16 @@ main.index a {
   } to {
     width: 500vmax;
     height: 500vmax;
+  }
+}
+
+@-webkit-keyframes holeOut {
+  from {
+    width: 500vmax;
+    height: 500vmax;
+  } to {
+    width: 0vmax;
+    height: 0vmax;
   }
 }
 
@@ -622,39 +778,57 @@ main.index #portrait {
   z-index: -1;
   position: fixed;
   right: 0;
-  object-fit: cover;
-  object-position: 70% 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 70% 50%;
+     object-position: 70% 50%;
 }
 
 .asterix {
   display: inline-block;
   cursor: pointer;
+  -webkit-transition: -webkit-transform 300ms cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  transition: -webkit-transform 300ms cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  -o-transition: transform 300ms cubic-bezier(0.68, -0.6, 0.32, 1.6);
   transition: transform 300ms cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  transition: transform 300ms cubic-bezier(0.68, -0.6, 0.32, 1.6), -webkit-transform 300ms cubic-bezier(0.68, -0.6, 0.32, 1.6);
   pointer-events: all;
 }
 
 .asterix:hover {
-  transform: rotate(60deg);
+  -webkit-transform: rotate(60deg);
+      -ms-transform: rotate(60deg);
+          transform: rotate(60deg);
 }
 
 main.index .asterix span {
   position: absolute;
   background-color: var(--color-1);
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   pointer-events: none;
   border-radius: 50%;
-  animation: burst 300ms ease-in-out;
+  -webkit-animation: burst 300ms ease-in-out;
+          animation: burst 300ms ease-in-out;
 }
 
 main.index .asterix:hover span {
-  clip-path: ellipse(100% 100%);
+  -webkit-clip-path: ellipse(100% 100%);
+          clip-path: ellipse(100% 100%);
 }
 
 .pageclip-form {
   padding: 2vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .pageclip-form * {
@@ -670,8 +844,11 @@ main.index .asterix:hover span {
 
 .pageclip-form input {
   background-color: transparent;
-  animation-delay: 0.5s;
-  flex-grow: 1;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   width: 0%;
 }
 
@@ -695,15 +872,23 @@ main.index footer {
   position: relative;
   top: calc(100% - 10vw);
   padding-top: 40vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   background-color: var(--color-2);
 }
 
 /*__ Index __*/
 
 #grid-for-cards {
+  display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
@@ -720,12 +905,14 @@ main.index footer {
 
 @media screen and (min-width: 1200px) {
   #grid-for-cards {
+    -ms-grid-columns: (auto)[3];
     grid-template-columns: repeat(3, auto);
   }
 }
 
 @media screen and (min-width: 3000px) {
   #grid-for-cards {
+    -ms-grid-columns: (auto)[4];
     grid-template-columns: repeat(4, auto);
   }
   #grid-for-cards > a.off {
@@ -738,6 +925,7 @@ main.index footer {
 
 @media screen and (min-width: 4000px) {
   #grid-for-cards {
+    -ms-grid-columns: (auto)[5];
     grid-template-columns: repeat(5, auto);
   }
   #grid-for-cards > a.off {
@@ -753,6 +941,8 @@ main.index footer {
   height: 0;
   padding-bottom: 100%;
   overflow: hidden;
+  -webkit-transition: border-radius 100ms;
+  -o-transition: border-radius 100ms;
   transition: border-radius 100ms;
 }
 
@@ -799,15 +989,45 @@ main.index footer {
 
 /*__ Animations __*/
 
-@keyframes fadeIn {
+@-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(3vw);
+    -webkit-transform: translateY(3vw);
+            transform: translateY(3vw);
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(3vw);
+            transform: translateY(3vw);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes burst {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 50%;
+  }
+
+  100% {
+    width: 36vw;
+    height: 36vw;
+    opacity: 0%;
   }
 }
 
@@ -823,6 +1043,13 @@ main.index footer {
     height: 36vw;
     opacity: 0%;
   }
+}
+
+@-webkit-keyframes bgAnimation {
+  0%     {background-color:red;}
+  27.5%  {background-color: white;}
+  80.0%  {background-color:red;}
+  100.0%  {background-color:red;}
 }
 
 @keyframes bgAnimation {
