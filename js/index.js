@@ -1,78 +1,41 @@
-// https://codepen.io/cooper_hu/pen/vmrNpO
-/* Paper JS Setup for working in CodePen */
-/* ====================== *
- *  0. Initiate Canvas    *
- * ====================== */
-paper.install(window);
-setTimeout(function(){
-  with (paper) {
-    paper.setup(document.getElementById("canvas"));
+// // https://codepen.io/cooper_hu/pen/vmrNpO
+// /* Paper JS Setup for working in CodePen */
+// /* ====================== *
+//  *  0. Initiate Canvas    *
+//  * ====================== */
 
-    /* ====================== *
-    *  1. Test Shape         *
-    * ====================== */
+// var can = document.getElementById("canvas");
+// can.style.width = window.innerWidth+"px";
+// can.style.height = window.innerHeight+"px";
+// //Install paper to the global scope
+// paper.install(window);
+// paper.setup("canvas");
 
-    var interval = 10;
-    var size = ((view.size.height / 2) + (view.size.width / 2)) / 2;
-    var circleGroup = new Group();
 
-    for (var i = 1; i < interval; i++) {
-      var circle = new Path.Circle({
-        // radius:  (i * (i / 10)) * size,
-        radius: (size / interval) * (i * 3),
-        // position: new Point(0,  view.size.height * 2),
-        position: view.center,
-        strokeColor: '#f40000',
-        strokeWidth: size * 0.005,
-        parent: circleGroup,
-      });
-    };
+// var xCount=16;
+// var yCount=16;
+// var gridX=20;
+// var gridY=10;
+// var offsetX=window.innerWidth/2;
+// var offsetY=window.innerHeight/4;
 
-    // for (var i = 1; i < interval; i++) {
-    //   var circle = new Path.Circle({
-    //     // radius:  (i * (i / 10)) * size,
-    //     radius: (((size / interval) * i) - (size)),
-    //     position: new Point(0,  view.size.height * 2),
-    //     // position: view.center,
-    //     strokeColor: '#f40000',
-    //     strokeWidth: (size / interval) * 0.025,
-    //     parent: circleGroup,
-    //   });
-    // };
+// for(var j=0;j<yCount;j++){
+// 	for(var i=0;i<xCount;i++){
+// 		var x = (i - j) * gridX;
+// 		var y = (i + j) * gridY;		
+// 		var path=new Path.Circle([x+offsetX,y+offsetY],40)
+// 		path.fillColor=new Color(i/xCount,j/yCount,1);
+// 		path.data.x=path.position.x;
+// 		path.data.y=path.position.y;
+// 	}
+// }
 
-    /* ====================== *
-    *  2. Mouse Interaction  *
-    * ====================== */
-
-    var mousePointX = view.size.width / 2;
-    var mousePointY = view.size.height / 2;
-
-    view.onMouseMove = function(event) {
-      mousePointX = event.point.x;
-      mousePointY = event.point.y;
-    }
-
-    /* ====================== *
-    *  3. Animation          *
-    * ====================== */
-
-    var children = circleGroup.children;
-
-    view.onFrame = function(event) {
-      for (var i = 0; i < children.length; i++) {
-        var item = children[i];
-        var first = children[1];
-        deltaX = (mousePointX - item.position.x) / (i + 2);
-        deltaY = (mousePointY - item.position.y) / (i + 2);
-
-        item.position.x += deltaX;
-        item.position.y += deltaY;
-
-        // first.opacity = 0;
-      }
-    };
-  }
-}, 0);
+// view.onFrame=function(event){
+// 	for(var i=0;i<project.activeLayer.children.length;i++){
+// 	var item=project.activeLayer.children[i];
+// 	item.position.y=item.data.y+Math.sin(event.count/30+(i/3))*40
+// 	}
+// }
 
 /* ====================== */
 
@@ -162,4 +125,13 @@ if (clock >= 7 && clock <= 19) {
   document.documentElement.classList.remove('dark-mode');
 } else {
   document.documentElement.classList.add('dark-mode');
+}
+
+/* ====================== */
+
+let circle = document.querySelectorAll('#rising > div:not(first-of-type)');
+
+for (var i = 0; i < circle.length; i++) {
+  var cur = -i * 3;
+  circle[i].style.setProperty('animation-delay', cur + 's');
 }
