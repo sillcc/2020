@@ -81,7 +81,7 @@ html.swup-enabled {
   font-family: 'HKGrotesk', sans-serif;
   color: var(--color-3);
   font-size: var(--big-font-size);
-  line-height: var(--big-font-size);
+  line-height: 1.1;
   /* font-weight: bold; */
   -webkit-font-variant-ligatures: normal;
           font-variant-ligatures: normal;
@@ -485,7 +485,7 @@ section.intro.on-top {
 }
 
 small {
-  font-family: 'Axis', 'HKGrotesk', sans-serif;
+  font-family: 'Axis', 'HKGrotesk', sans-serif !important;
   font-size: var(--small-font-size) !important;
   line-height: var(--small-font-size) !important;
   padding-left: 0.2vw;
@@ -504,8 +504,8 @@ main.reveal small {
 
 /*__ Index __*/
 
-* {
-  font-family: 'HKGrotesk', sans-serif;
+#home * {
+  font-family: 'BluuNext', sans-serif;
 }
 
 main.index p {
@@ -537,7 +537,7 @@ header .top, header .bottom {
 header .top *, header .bottom * {
   font-size: var(--small-font-size);
   line-height: var(--small-font-size);
-  font-family: 'Axis', 'HKGrotesk', sans-serif;
+  font-family: 'Axis', 'HKGrotesk', sans-serif !important;
   text-transform: uppercase;
 }
 
@@ -571,6 +571,11 @@ header > .middle {
           animation-delay: 1150ms;
 }
 
+header > .middle p {
+  display: block;
+  padding: 0.25vw;
+}
+
 header > .bottom {
   bottom: 0;
 }
@@ -600,6 +605,11 @@ a:focus {
 
 #reveal a {
   text-decoration: underline;
+}
+
+aside * {
+  font-family: 'HKGrotesk', sans-serif !important;
+  font-weight: bold;
 }
 
 .spinner {
@@ -873,7 +883,8 @@ footer > div {
 }
 
 footer * {
-  line-height: 0.8;
+  display: block;
+  padding: 1vw;
 }
 
 /*__ Index __*/
@@ -952,6 +963,9 @@ footer * {
 /*__ Reveal > Responsive __*/
 
 @media screen and (max-width: 976px) {
+  * {
+    hyphens: auto;
+  }
   .only-desktop {
     display: none;
   }
@@ -973,6 +987,9 @@ footer * {
 }
 
 @media screen and (min-width: 977px) {
+  * {
+    hyphens: none;
+  }
   .only-mobile {
     display: none;
   }
