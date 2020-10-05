@@ -21,8 +21,8 @@
 :root.dark-mode {
   /* Palette */
   --color-1: #f40000;
-  --color-2: rgb(23, 23, 26);
-  --color-3: rgb(152, 202, 255);
+  --color-2: #242424;
+  --color-3: #848484;
   --color-filter: brightness(0) saturate(100%) invert(24%) sepia(0%) saturate(0%) hue-rotate(202deg) brightness(103%) contrast(90%);
 }
 
@@ -107,6 +107,8 @@ body, html {
 
 html {
   background-color: var(--color-2);
+  -webkit-transition: background-color 750ms steps(1);
+  -o-transition: background-color 750ms steps(1);
   transition: background-color 750ms steps(1);
   overflow-x: hidden;
 }
@@ -804,7 +806,9 @@ main.index #portrait {
 }
 
 .switch.dark-mode {
-  transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+      -ms-transform: scaleX(-1);
+          transform: scaleX(-1);
 }
 
 /* .switch:hover {
@@ -814,7 +818,7 @@ main.index #portrait {
 } */
 
 body > span {
-  position: absolute;
+  position: fixed;
   z-index: -1;
   background-color: var(--color-2);
   -webkit-transform: translate(-50%, -50%);
