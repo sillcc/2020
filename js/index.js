@@ -100,7 +100,7 @@ swi.addEventListener('click', function(e) {
 
   setTimeout(() => {
     ripple.remove()
-  },1000);
+  },1500);
 })
 
 /* ====================== */
