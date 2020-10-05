@@ -9,7 +9,7 @@
   --color-1: #f40000;
   --color-2: white;
   --color-3: var(--color-1);
-  --color-filter: none;
+  --color-filter: invert(83%) sepia(25%) saturate(722%) hue-rotate(113deg) brightness(103%) contrast(102%);
   /* Animation */
   --easing: cubic-bezier(0.175, 0.885, 0, 1);
   --fadeIn: fadeIn 400ms forwards var(--easing);
@@ -21,9 +21,9 @@
 :root.dark-mode {
   /* Palette */
   --color-1: #f40000;
-  --color-2: #242424;
-  --color-3: #848484;
-  --color-filter: brightness(0) saturate(100%) invert(24%) sepia(0%) saturate(0%) hue-rotate(202deg) brightness(103%) contrast(90%);
+  --color-2: #1c2541;
+  --color-3: #6fffe9;
+  --color-filter: invert(12%) sepia(68%) saturate(7484%) hue-rotate(2deg) brightness(108%) contrast(119%);
 }
 
 :root.is-fullscreen {
@@ -696,6 +696,7 @@ a:focus {
   z-index: +1;
   pointer-events: none;
   /* mix-blend-mode: exclusion; */
+  filter: var(--color-filter);
 }
 
 #mask {

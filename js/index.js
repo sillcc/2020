@@ -12,7 +12,7 @@ setTimeout(function(){
     *  1. Test Shape         *
     * ====================== */
 
-    var interval = 10;
+    var interval = 15;
     var size = ((view.size.height / 2) + (view.size.width / 2)) / 2;
     var circleGroup = new Group();
 
@@ -22,7 +22,7 @@ setTimeout(function(){
         radius: (size / interval) * (i * 3),
         // position: new Point(0,  view.size.height * 2),
         position: view.center,
-        strokeColor: '#f40000',
+        strokeColor: '#000',
         strokeWidth: size * 0.005,
         parent: circleGroup,
       });
