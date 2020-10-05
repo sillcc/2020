@@ -87,21 +87,21 @@ function delay (URL) {
 
 /* ====================== */
 
-var asterix = document.querySelector('.asterix');
-asterix.addEventListener('click', function(e) {
+// var swi = document.querySelector('.switch');
+// swi.addEventListener('click', function(e) {
 
-  let x = e.target.clientWidth / 2;
-  let y = e.target.clientHeight / 2;
+//   let x = e.target.clientWidth / 2;
+//   let y = e.target.clientHeight / 2;
 
-  let ripple = document.createElement('span');
-  ripple.style.left = x + 'px';
-  ripple.style.top = y + 'px';
-  this.appendChild(ripple);
+//   let ripple = document.createElement('span');
+//   ripple.style.left = x + 'px';
+//   ripple.style.top = y + 'px';
+//   this.appendChild(ripple);
 
-  setTimeout(() => {
-    ripple.remove()
-  },500);
-})
+//   setTimeout(() => {
+//     ripple.remove()
+//   },500);
+// })
 
 /* ====================== */
 
@@ -132,29 +132,34 @@ function ping() {
 
 /* ====================== */
 
-var clickCounter = 0;
+// var clickCounter = 0;
 
-function onOut_1() {
-  document.documentElement.classList.toggle('dark-mode');
-};
+// function onOut_1() {
+//   document.documentElement.classList.toggle('dark-mode');
+// };
 
-function onOut_2() {
-  clickCounter = 0;
-};
+// function onOut_2() {
+//   clickCounter = 0;
+// };
 
-function onOver(t) {
-  t.removeEventListener('mouseout', onOut_2);
-  t.addEventListener('mouseout', onOut_1);
-  document.documentElement.classList.toggle('dark-mode');
-};
+// function onOver(t) {
+//   t.removeEventListener('mouseout', onOut_2);
+//   t.addEventListener('mouseout', onOut_1);
+//   document.documentElement.classList.toggle('dark-mode');
+// };
+
+// function onClick(t) {
+//   t.removeEventListener('mouseout', onOut_1);
+//   t.addEventListener('mouseout', onOut_2);
+//   clickCounter++;
+//   if (clickCounter > 1) {
+//     document.documentElement.classList.toggle('dark-mode');
+//   }
+// };
 
 function onClick(t) {
-  t.removeEventListener('mouseout', onOut_1);
-  t.addEventListener('mouseout', onOut_2);
-  clickCounter++;
-  if (clickCounter > 1) {
-    document.documentElement.classList.toggle('dark-mode');
-  }
+  document.documentElement.classList.toggle('dark-mode');
+  document.querySelector('.switch').classList.toggle('dark-mode');
 };
 
 var clock = new Date().getHours();

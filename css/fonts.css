@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: 'HKGrotesk';
-      src: url('fonts/HKGrotesk/HKGrotesk-Bold.eot') format('eot'),
+  src: url('fonts/HKGrotesk/HKGrotesk-Bold.eot') format('eot'),
       url('fonts/HKGrotesk/HKGrotesk-Bold.woff') format('woff'),
       url('fonts/HKGrotesk/HKGrotesk-Bold.woff2') format('woff2');
   font-style: normal;
@@ -21,7 +21,7 @@
   font-display: swap;
 } */
 
-@font-face {
+/* @font-face {
   font-family: 'HKGrotesk';
       src: url('fonts/HKGrotesk/HKGrotesk-Black.eot') format('eot'),
       url('fonts/HKGrotesk/HKGrotesk-Black.woff') format('woff'),
@@ -29,14 +29,14 @@
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-}
+} */
 
 @font-face {
-	font-family: 'Maison';
-	src: url('fonts/Maison/Maison-Bold.woff2') format('woff2'),
-		url('fonts/Maison/Maison-Bold.woff') format('woff'),
-		url('fonts/Maison/Maison-Bold.ttf') format('truetype');
-	font-weight: bold;
+  font-family: 'Axis';
+  src: url('fonts/Axis/Axis-ExtraBold.eot') format('eot'),
+    url('fonts/Axis/Axis-ExtraBold.woff') format('woff'),
+    url('fonts/Axis/Axis-ExtraBold.woff2') format('woff2');
+	font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
