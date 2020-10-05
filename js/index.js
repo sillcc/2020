@@ -87,21 +87,21 @@ function delay (URL) {
 
 /* ====================== */
 
-// var swi = document.querySelector('.switch');
-// swi.addEventListener('click', function(e) {
+var swi = document.querySelector('.switch');
+swi.addEventListener('click', function(e) {
 
-//   let x = e.target.clientWidth / 2;
-//   let y = e.target.clientHeight / 2;
+  let x = e.target.clientWidth / 2;
+  let y = e.target.clientHeight / 2;
 
-//   let ripple = document.createElement('span');
-//   ripple.style.left = x + 'px';
-//   ripple.style.top = y + 'px';
-//   this.appendChild(ripple);
+  let ripple = document.createElement('span');
+  ripple.style.left = '100vw';
+  ripple.style.top = '0px';
+  document.body.appendChild(ripple);
 
-//   setTimeout(() => {
-//     ripple.remove()
-//   },500);
-// })
+  setTimeout(() => {
+    ripple.remove()
+  },800);
+})
 
 /* ====================== */
 

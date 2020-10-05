@@ -107,6 +107,7 @@ body, html {
 
 html {
   background-color: var(--color-2);
+  transition: background-color 750ms steps(1);
   overflow-x: hidden;
 }
 
@@ -812,19 +813,20 @@ main.index #portrait {
           transform: var(--switch-in);
 } */
 
-/* main.index .switch span {
+body > span {
   position: absolute;
-  background-color: var(--color-1);
+  z-index: -1;
+  background-color: var(--color-2);
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   pointer-events: none;
   border-radius: 50%;
-  -webkit-animation: burst 300ms ease-in-out;
-          animation: burst 300ms ease-in-out;
+  -webkit-animation: burst 750ms;
+          animation: burst 750ms;
 }
 
-main.index .switch:hover span {
+/* main.index .switch:hover span {
   -webkit-clip-path: ellipse(100% 100%);
           clip-path: ellipse(100% 100%);
 } */
@@ -1005,13 +1007,13 @@ footer * {
   0% {
     width: 0px;
     height: 0px;
-    opacity: 50%;
+    /* opacity: 50%; */
   }
 
   100% {
-    width: 36vw;
-    height: 36vw;
-    opacity: 0%;
+    width: 300vmax;
+    height: 300vmax;
+    /* opacity: 0%; */
   }
 }
 
@@ -1019,13 +1021,13 @@ footer * {
   0% {
     width: 0px;
     height: 0px;
-    opacity: 50%;
+    /* opacity: 50%; */
   }
 
   100% {
-    width: 36vw;
-    height: 36vw;
-    opacity: 0%;
+    width: 300vmax;
+    height: 300vmax;
+    /* opacity: 0%; */
   }
 }
 
