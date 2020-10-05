@@ -12,7 +12,7 @@ setTimeout(function(){
     *  1. Test Shape         *
     * ====================== */
 
-    var interval = 15;
+    var interval = 12;
     var size = ((view.size.height / 2) + (view.size.width / 2)) / 2;
     var circleGroup = new Group();
 
