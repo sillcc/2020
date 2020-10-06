@@ -648,10 +648,10 @@ a:focus {
 
 @-webkit-keyframes spinnerBg {
   0% {
-    background-color: white;
+    background-color: var(--color-2);
   }
   50% {
-    background-color: white;
+    background-color: var(--color-2);
   }
   100% {
     background-color: transparent;
@@ -660,10 +660,10 @@ a:focus {
 
 @keyframes spinnerBg {
   0% {
-    background-color: white;
+    background-color: var(--color-2);
   }
   50% {
-    background-color: white;
+    background-color: var(--color-2);
   }
   100% {
     background-color: transparent;
