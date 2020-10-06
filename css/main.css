@@ -601,11 +601,12 @@ a {
   cursor: pointer;
 }
 
-a:hover {
+main.reveal a:hover {
   text-decoration: none !important;
 }
 
-#head a:hover {
+#home a:hover {
+  text-decoration: none !important;
   color: var(--color-2-inv);
 }
 
