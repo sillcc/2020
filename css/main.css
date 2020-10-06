@@ -603,6 +603,9 @@ a {
 
 a:hover {
   text-decoration: none !important;
+}
+
+#head a:hover {
   color: var(--color-2-inv);
 }
 
