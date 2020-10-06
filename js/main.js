@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const arrow = document.getElementById('arrow');
       document.getElementById('click-area').addEventListener('mousemove', e => {
-        arrow.setAttribute('style', 'top: ' + e.pageY + 'px; left: ' + e.pageX + 'px; font-size: inherit;');
+        arrow.setAttribute('style', 'top: ' + e.pageY + 'px; left: ' + e.pageX + 'px; font-size: var(--small-font-size);');
       });
       document.getElementById('click-area').addEventListener('mouseout', e => {
         arrow.setAttribute('style', 'top: ' + e.pageY + 'px; left: ' + e.pageX + 'px; font-size: 0vw;');

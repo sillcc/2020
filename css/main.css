@@ -5,9 +5,10 @@
 :root {
   --view-mode: 75vh;
   /* Palette */
-  --color-contrast: white;
+  --color-contrast: #fff;
   --color-1: #f40000;
-  --color-2: white;
+  --color-2: #fff;
+  --color-2-inv: #000;
   --color-3: var(--color-1);
   --color-filter: invert(83%) sepia(25%) saturate(722%) hue-rotate(113deg) brightness(103%) contrast(102%);
   /* Animation */
@@ -22,6 +23,7 @@
   /* Palette */
   --color-1: #f40000;
   --color-2: #1c2541;
+  --color-2-inv: #fff;
   --color-3: #6fffe9;
   --color-filter: invert(12%) sepia(68%) saturate(7484%) hue-rotate(2deg) brightness(108%) contrast(119%);
 }
@@ -67,7 +69,7 @@ html.is-animating .swup-fade {
 }
 
 html.swup-enabled {
-  background-color: black;
+  background-color: #000;
 }
 
 /*__ Global __*/
@@ -114,7 +116,7 @@ html {
 }
 
 /* html.on {
-  background-color: black;
+  background-color: #000;
 } */
 
 /*__ Reveal __*/
@@ -172,7 +174,7 @@ section.present.on-top {
 }
 
 section.intro.on-top {
-  background-color: black;
+  background-color: #000;
 }
 
 #noscript {
@@ -251,6 +253,10 @@ section.intro.on-top {
       -ms-transform: rotate(-315deg) scale(-1);
           transform: rotate(-315deg) scale(-1);
 }
+
+/* #prev:hover #arrow:after {
+  content:'○';
+} */
 
 .intro {
   -webkit-box-orient: vertical;
@@ -597,6 +603,7 @@ a {
 
 a:hover {
   text-decoration: none !important;
+  color: var(--color-2-inv);
 }
 
 a:focus {
@@ -605,11 +612,6 @@ a:focus {
 
 #reveal a {
   text-decoration: underline;
-}
-
-aside * {
-  font-family: 'HKGrotesk', sans-serif !important;
-  font-weight: bold;
 }
 
 .spinner {
@@ -633,7 +635,8 @@ aside * {
 }
 
 .spinner * {
-  color: #f40000;
+  font-family: "Arial", sans-serif !important;
+  /* color: #f40000; */
   -webkit-animation: spinner 1750ms forwards var(--easing);
           animation: spinner 1750ms forwards var(--easing);
   opacity: 0;
@@ -666,32 +669,32 @@ aside * {
 @-webkit-keyframes spinner {
   0% {
     opacity: 0;
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
   } 
   50% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
 }
 
 @keyframes spinner {
   0% {
     opacity: 0;
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
   } 
   50% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
 }
 
@@ -728,12 +731,12 @@ aside * {
 }
 
 #hole {
-  background: -o-radial-gradient(circle, transparent 50%, black 50%);
-  background: radial-gradient(circle, transparent 50%, black 50%);
+  background: -o-radial-gradient(circle, transparent 50%, #000 50%);
+  background: radial-gradient(circle, transparent 50%, #000 50%);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  -webkit-box-shadow: 0 0 0 100vmax black;
-          box-shadow: 0 0 0 100vmax black;
+  -webkit-box-shadow: 0 0 0 100vmax #000;
+          box-shadow: 0 0 0 100vmax #000;
 }
 
 #hole {
@@ -822,11 +825,12 @@ main.index #portrait {
           transform: scaleX(-1);
 }
 
-/* .switch:hover {
-  -webkit-transform: var(--switch-in);
+.switch:hover {
+  fill: var(--color-2-inv);
+  /* -webkit-transform: var(--switch-in);
       -ms-transform: var(--switch-in);
-          transform: var(--switch-in);
-} */
+          transform: var(--switch-in); */
+}
 
 body > span {
   position: fixed;
@@ -1075,7 +1079,7 @@ footer * {
 
 @keyframes bgFix {
   from {
-    background-color: black;
+    background-color: #000;
   }
   to {
     background-color: transparent;
