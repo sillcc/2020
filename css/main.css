@@ -492,7 +492,8 @@ section.intro.on-top {
 }
 
 small {
-  font-family: 'Axis', 'HKGrotesk', sans-serif !important;
+  font-family: 'HKGrotesk', sans-serif !important;
+  font-weight: 900;
   font-size: var(--small-font-size) !important;
   line-height: var(--small-font-size) !important;
   padding-left: 0.2vw;
@@ -548,7 +549,8 @@ header .top, header .bottom {
 header .top *, header .bottom * {
   font-size: var(--small-font-size);
   line-height: var(--small-font-size);
-  font-family: 'Axis', 'HKGrotesk', sans-serif !important;
+  font-family: 'HKGrotesk', sans-serif !important;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
