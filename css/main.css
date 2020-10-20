@@ -584,7 +584,7 @@ header > .middle {
 
 header > .middle p {
   display: block;
-  padding: 0.25vw;
+  /* padding: 0.25vw; */
   font-size: var(--big-font-size);
   text-transform: capitalize;
 }
