@@ -6,7 +6,7 @@
   --view-mode: 75vh;
   /* Palette */
   --color-contrast: #fff;
-  --color-1: #f40000;
+  --color-1: #E21;
   --color-2: #fff;
   --color-2-inv: #000;
   --color-3: var(--color-1);
@@ -16,6 +16,7 @@
   --fadeIn: fadeIn 400ms forwards var(--easing);
   /* Typography */
   --big-font-size: 6vw;
+  --normal-font-size: 6vw;
   --small-font-size: 1.5vw;
 }
 
@@ -82,7 +83,7 @@ html.swup-enabled {
 * {
   font-family: 'HKGrotesk', sans-serif;
   color: var(--color-3);
-  font-size: var(--big-font-size);
+  font-size: var(--normal-font-size);
   line-height: 1.1;
   /* font-weight: bold; */
   -webkit-font-variant-ligatures: normal;
@@ -96,7 +97,7 @@ html.swup-enabled {
 
 body, html {
   height: 100%;
-  width: 100%;
+  width: 100vw;
   margin: 0;
   padding: 0;
   left: 0;
@@ -584,6 +585,8 @@ header > .middle {
 header > .middle p {
   display: block;
   padding: 0.25vw;
+  font-size: var(--big-font-size);
+  text-transform: capitalize;
 }
 
 header > .bottom {
@@ -868,6 +871,10 @@ body > span {
   -webkit-clip-path: polygon(0% 0%, 100% 10vw, 100% 100%, 0% calc(100% - 10vw));
 }
 
+#main p {
+  text-align: center;
+}
+
 footer {
   position: relative;
   padding: 2vw;
@@ -895,9 +902,13 @@ footer > div {
   grid-gap: 5vh;
 }
 
+footer > * {
+  /* display: block; */
+  padding: 1vw 2vw;
+}
+
 footer * {
-  display: block;
-  padding: 1vw;
+  font-size: var(--big-font-size);
 }
 
 /*__ Index __*/
@@ -976,11 +987,11 @@ footer * {
 /*__ Reveal > Responsive __*/
 
 @media screen and (max-width: 976px) {
-  * {
+  /* * {
     -webkit-hyphens: auto;
         -ms-hyphens: auto;
             hyphens: auto;
-  }
+  } */
   .only-desktop {
     display: none;
   }
@@ -1002,11 +1013,11 @@ footer * {
 }
 
 @media screen and (min-width: 977px) {
-  * {
+  /* * {
     -webkit-hyphens: none;
         -ms-hyphens: none;
             hyphens: none;
-  }
+  } */
   .only-mobile {
     display: none;
   }
