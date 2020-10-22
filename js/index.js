@@ -22,7 +22,7 @@ setTimeout(function(){
         radius: (size / interval) * (i * 3),
         // position: new Point(0,  view.size.height * 2),
         position: view.center,
-        strokeColor: '#000',
+        strokeColor: '#8e1ce6',
         strokeWidth: size * 0.0015,
         parent: circleGroup,
       });
