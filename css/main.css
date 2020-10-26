@@ -514,6 +514,24 @@ main.reveal small {
 
 #home * {
   font-family: 'BluuNext', sans-serif;
+  cursor: none;
+}
+
+#cursor {
+  height: 1vmax;
+  width: 1vmax;
+  border-radius: 50%;
+  background-color: var(--color-3);
+  position: fixed;
+  z-index: +5;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  #cursor {
+    opacity: 0;
+  }
 }
 
 main.index p {

@@ -168,3 +168,13 @@ if (clock >= 7 && clock <= 19) {
 } else {
   document.documentElement.classList.add('dark-mode');
 }
+
+/* ====================== */
+
+const index = document.getElementById('cursor');
+document.addEventListener('mousemove', e => {
+  index.setAttribute('style', 'top: ' + e.clientY + 'px; left: ' + e.clientX + 'px; font-size: 3vw;');
+});
+document.addEventListener('mouseout', e => {
+  index.setAttribute('style', 'top: ' + e.clientY + 'px; left: ' + e.clientX + 'px; font-size: 0vw;');
+});
