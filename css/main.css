@@ -514,30 +514,11 @@ main.reveal small {
 
 #home * {
   font-family: 'BluuNext', sans-serif;
-  cursor: none;
-}
-
-#cursor {
-  height: 0.75vmax;
-  width: 0.75vmax;
-  border-radius: 50%;
-  background-color: var(--color-3);
-  position: fixed;
-  z-index: +5;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-
-@media (hover: none) and (pointer: coarse) {
-  #cursor {
-    opacity: 0;
-  }
 }
 
 main.index p {
   padding: 3.5vw 10vw 1.5vw 10vw;
+  cursor: default;
 }
 
 header {
@@ -643,10 +624,6 @@ main.reveal a:hover {
   color: var(--color-2-inv);
 }
 
-a:focus {
-  text-decoration: none !important;
-}
-
 #reveal a {
   text-decoration: underline;
 }
@@ -746,9 +723,8 @@ a:focus {
      object-fit: cover;
   /* z-index: +1; */
   pointer-events: none;
-  /* mix-blend-mode: exclusion; */
-  -webkit-filter: var(--color-filter);
-          filter: var(--color-filter);
+  /* -webkit-filter: var(--color-filter);
+          filter: var(--color-filter); */
 }
 
 #mask {
@@ -835,10 +811,12 @@ a:focus {
 
 #portrait {
   display: none;
-  position: absolute;
+  position: fixed;
   height: 100%;
   padding: 2vw;
   width: 100%;
+  z-index: +1;
+  pointer-events: none;
   -o-object-fit: contain;
      object-fit: contain;
 }

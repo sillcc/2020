@@ -22,7 +22,7 @@ setTimeout(function(){
         radius: (size / interval) * (i * 3),
         // position: new Point(0,  view.size.height * 2),
         position: view.center,
-        strokeColor: '#8338ec',
+        strokeColor: '#ff0000',
         strokeWidth: size * 0.002,
         parent: circleGroup,
       });
@@ -133,16 +133,6 @@ if (clock >= 7 && clock <= 19) {
 } else {
   document.documentElement.classList.add('dark-mode');
 }
-
-/* ====================== */
-
-const cur = document.getElementById('cursor');
-document.addEventListener('mousemove', e => {
-  cur.setAttribute('style', 'top: ' + e.clientY + 'px; left: ' + e.clientX + 'px; font-size: 3vw;');
-});
-document.addEventListener('mouseout', e => {
-  cur.setAttribute('style', 'top: ' + e.clientY + 'px; left: ' + e.clientX + 'px; font-size: 0vw;');
-});
 
 /* ====================== */
 
