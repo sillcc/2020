@@ -22,23 +22,11 @@ setTimeout(function(){
         radius: (size / interval) * (i * 3),
         // position: new Point(0,  view.size.height * 2),
         position: view.center,
-        strokeColor: '#8e1ce6',
-        strokeWidth: size * 0.0015,
+        strokeColor: '#aa7527',
+        strokeWidth: size * 0.002,
         parent: circleGroup,
       });
     };
-
-    // for (var i = 1; i < interval; i++) {
-    //   var circle = new Path.Circle({
-    //     // radius:  (i * (i / 10)) * size,
-    //     radius: (((size / interval) * i) - (size)),
-    //     position: new Point(0,  view.size.height * 2),
-    //     // position: view.center,
-    //     strokeColor: '#f40000',
-    //     strokeWidth: (size / interval) * 0.025,
-    //     parent: circleGroup,
-    //   });
-    // };
 
     /* ====================== *
     *  2. Mouse Interaction  *
@@ -132,35 +120,12 @@ function ping() {
 
 /* ====================== */
 
-// var clickCounter = 0;
-
-// function onOut_1() {
-//   document.documentElement.classList.toggle('dark-mode');
-// };
-
-// function onOut_2() {
-//   clickCounter = 0;
-// };
-
-// function onOver(t) {
-//   t.removeEventListener('mouseout', onOut_2);
-//   t.addEventListener('mouseout', onOut_1);
-//   document.documentElement.classList.toggle('dark-mode');
-// };
-
-// function onClick(t) {
-//   t.removeEventListener('mouseout', onOut_1);
-//   t.addEventListener('mouseout', onOut_2);
-//   clickCounter++;
-//   if (clickCounter > 1) {
-//     document.documentElement.classList.toggle('dark-mode');
-//   }
-// };
-
 function onClick(t) {
   document.documentElement.classList.toggle('dark-mode');
   document.querySelector('.switch').classList.toggle('dark-mode');
 };
+
+/* ====================== */
 
 var clock = new Date().getHours();
 if (clock >= 7 && clock <= 19) {
@@ -171,10 +136,20 @@ if (clock >= 7 && clock <= 19) {
 
 /* ====================== */
 
-const index = document.getElementById('cursor');
+const cur = document.getElementById('cursor');
 document.addEventListener('mousemove', e => {
-  index.setAttribute('style', 'top: ' + e.clientY + 'px; left: ' + e.clientX + 'px; font-size: 3vw;');
+  cur.setAttribute('style', 'top: ' + e.clientY + 'px; left: ' + e.clientX + 'px; font-size: 3vw;');
 });
 document.addEventListener('mouseout', e => {
-  index.setAttribute('style', 'top: ' + e.clientY + 'px; left: ' + e.clientX + 'px; font-size: 0vw;');
+  cur.setAttribute('style', 'top: ' + e.clientY + 'px; left: ' + e.clientX + 'px; font-size: 0vw;');
 });
+
+/* ====================== */
+
+function showPh() {
+  document.getElementById('portrait').classList.add('on');
+};
+
+function hidePh() {
+  document.getElementById('portrait').classList.remove('on');
+};

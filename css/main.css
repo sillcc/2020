@@ -518,8 +518,8 @@ main.reveal small {
 }
 
 #cursor {
-  height: 1vmax;
-  width: 1vmax;
+  height: 0.75vmax;
+  width: 0.75vmax;
   border-radius: 50%;
   background-color: var(--color-3);
   position: fixed;
@@ -582,6 +582,10 @@ header > div {
 
 header > .top {
   top: 0;
+}
+
+header > .top > span:hover {
+  cursor: help !important;
 }
 
 header > .middle {
@@ -830,15 +834,17 @@ a:focus {
 }
 
 #portrait {
+  display: none;
   position: absolute;
   height: 100%;
-  padding: 6vw 12vw;
+  padding: 2vw;
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-  -o-object-position: right;
-     object-position: right;
-  z-index: -1;
+}
+
+#portrait.on {
+  display: block;
 }
 
 .switch {
