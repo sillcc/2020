@@ -23,7 +23,7 @@
 :root.dark-mode {
   /* Palette */
   --color-1:#E21;
-  --color-2:#E21;
+  --color-2:#8819f7;
   --color-2-inv: #fff;
   --color-3: #000;
   /* --color-filter: invert(12%) sepia(68%) saturate(7484%) hue-rotate(2deg) brightness(108%) contrast(119%); */
@@ -600,9 +600,9 @@ header > .bottom {
   bottom: 0;
 }
 
-header > .bottom a {
+/* header > .bottom a {
   text-decoration: overline;
-}
+} */
 
 header > p:nth-of-type(2) {
   padding: 0 2vw;
