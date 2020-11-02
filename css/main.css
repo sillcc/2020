@@ -267,7 +267,7 @@ section.intro.on-top {
 }
 
 .intro > * {
-  padding: 2vw;
+  padding: 3vw;
   opacity: 0;
   -webkit-transform: translateY(3vw);
       -ms-transform: translateY(3vw);
@@ -532,7 +532,7 @@ header > * {
 header .top, header .bottom {
   position: fixed;
   width: 100%;
-  padding: 2vw;
+  padding: 3vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -844,7 +844,7 @@ a.link:before {
   display: none;
   position: fixed;
   height: 100%;
-  padding: 2vw;
+  padding: 3vw;
   width: 100%;
   z-index: +1;
   pointer-events: none;
@@ -915,7 +915,7 @@ body > span {
 
 footer {
   position: relative;
-  padding: 2vw;
+  padding: 3vw;
   height: 100vh;
   text-align: center;
   display: -webkit-box;
