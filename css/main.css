@@ -641,11 +641,15 @@ a.link:hover:before {
   width: 0;
 }
 
+a.link.overline:before {
+  top: -0.4vmax !important;
+}
+
 a.link:before {
   height: 1px;
   width: 100%;
   left: 0;
-  bottom: -2px;
+  bottom: -0.4vmax;
   -webkit-transition: width .2s ease-in-out;
   -o-transition: width .2s ease-in-out;
   transition: width .2s ease-in-out;
