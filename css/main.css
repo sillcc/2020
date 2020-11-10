@@ -23,9 +23,9 @@
 :root.dark-mode {
   /* Palette */
   --color-1:#E21;
-  --color-2:#8819f7;
+  --color-2:#1c2541;
   --color-2-inv: #fff;
-  --color-3: #000;
+  --color-3: #6fffe9;
   /* --color-filter: invert(12%) sepia(68%) saturate(7484%) hue-rotate(2deg) brightness(108%) contrast(119%); */
 }
 
